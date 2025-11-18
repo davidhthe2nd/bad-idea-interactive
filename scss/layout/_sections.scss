@@ -1,0 +1,16 @@
+.section {
+  padding: $spacing-6 0;
+
+  &.dark {
+    background: $black;
+    color: $white;
+
+    h2 {
+      color: $white;
+    }
+  }
+
+  &.light {
+    background: $light;
+  }
+}

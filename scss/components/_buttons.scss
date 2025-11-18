@@ -1,0 +1,44 @@
+// Shared button styles
+@mixin btn-base {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+
+// PRIMARY (red)
+.btn-primary {
+  @include btn-base;
+  background: $primary;
+  color: $white;
+
+  &:hover {
+    background: darken($primary, 10%);
+  }
+}
+
+// SECONDARY (blue)
+.btn-secondary {
+  @include btn-base;
+  background: $blue;
+  color: $white;
+
+  &:hover {
+    background: darken($blue, 10%);
+  }
+}
+
+// OUTLINE (ghost)
+.btn-ghost {
+  @include btn-base;
+  background: transparent;
+  border: 2px solid $primary;
+  color: $primary;
+
+  &:hover {
+    background: $black;
+    color: $white;
+  }
+}
