@@ -296,9 +296,16 @@ p {
   font-size: 0.85rem;
 }
 .footer .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(241, 234, 234, 0.06);
   margin-top: 24px;
   padding-top: 16px;
   text-align: center;
   color: #A3A3A3;
+}
+.footer .mb-0 {
+  border-top: 1px solid rgba(241, 234, 234, 0.06);
+  margin-top: 24px;
+  padding-top: 16px;
+  text-align: center;
+  color: #FFFFFF;
 }/*# sourceMappingURL=style.css.map */
