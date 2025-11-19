@@ -1,8 +1,7 @@
 .footer {
   background: $black;
   color: $white;
-  padding: $spacing-4;
-  text-align: center;
+  padding: $spacing-4 0 $spacing-3 0;
   font-size: 14px;
 
   a {
@@ -11,6 +10,51 @@
 
     &:hover {
       color: lighten($primary, 10%);
+      text-decoration: underline;
     }
+  }
+
+  .footer-brand-name {
+    font-family: $font-headings;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .footer-text {
+    color: $mid-grey;
+    margin-bottom: $spacing-1;
+  }
+
+  .footer-heading {
+    font-family: $font-headings;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: $spacing-2;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 6px;
+    }
+  }
+
+  .footer-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.85rem;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: $spacing-3;
+    padding-top: $spacing-2;
+    text-align: center;
+    color: $mid-grey;
   }
 }

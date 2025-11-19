@@ -1,0 +1,16 @@
+body {
+  font-family: $font-body;
+  color: $black;
+  background: $white;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $font-headings;
+  font-weight: 700;
+  margin-bottom: $spacing-2;
+}
+
+p {
+  margin-bottom: $spacing-2;
+  color: $black;
+}

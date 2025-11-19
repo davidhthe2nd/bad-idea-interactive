@@ -1,0 +1,85 @@
+.card {
+  background: $white;
+  border-radius: 8px;
+  padding: 0;                // we'll handle padding in body
+  box-shadow: $shadow-soft;
+  overflow: hidden;
+  transition: 0.2s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-medium;
+  }
+
+  .card-body {
+    padding: $spacing-3;
+  }
+
+  .card-title {
+    font-family: $font-headings;
+    margin-bottom: $spacing-1;
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    color: $mid-grey;
+    font-size: 0.95rem;
+  }
+}
+
+/* Games-specific tweaks */
+.game-card {
+  .card-img-top {
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .game-meta {
+    margin-top: $spacing-2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .game-tag {
+    background: $light;
+    color: $black;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .game-tag-status {
+    background: rgba($primary, 0.1);
+    color: $primary;
+  }
+}
+
+.app-card {
+  .card-img-top {
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .app-meta {
+    margin-top: $spacing-2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .app-tag {
+    background: $light;
+    color: $black;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .app-tag-status {
+    background: rgba($blue, 0.08);
+    color: $blue;
+  }
+}
