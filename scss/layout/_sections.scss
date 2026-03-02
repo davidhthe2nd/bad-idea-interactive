@@ -65,3 +65,35 @@
     gap: 8px;
   }
 }
+
+.team-card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  }
+}
+
+.team-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.team-card:hover .team-photo {
+  transform: scale(1.03);
+}
+
+.role {
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
