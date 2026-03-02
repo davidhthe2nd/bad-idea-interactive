@@ -1,0 +1,426 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<div class="ballot-page">
+  <div class="ballot-card">
+    <div class="ballot-header">
+      <div>
+        <h1>Reward Lottery</h1>
+        <p>Paste people + rewards, then generate a TSV you can paste directly into Excel.</p>
+      </div>
+      <div class="ballot-badges">
+        <span class="badge" id="countsBadge">0 people • 0 rewards</span>
+        <span class="badge subtle">TSV output</span>
+      </div>
+    </div>
+
+    <div class="ballot-grid">
+      <label class="field">
+        <span class="field-label">People <span class="hint">(one per line)</span></span>
+        <textarea id="names" rows="10" placeholder="Alice&#10;Bob&#10;Charlie"></textarea>
+      </label>
+
+      <label class="field">
+        <span class="field-label">Rewards <span class="hint">(rewards + optional waitlist)</span></span>
+        <textarea id="rewards" rows="10" placeholder="Spot A&#10;Spot B&#10;Waitlist 1"></textarea>
+      </label>
+    </div>
+
+    <div class="ballot-controls">
+      <label class="toggle">
+        <input id="autoWaitlist" type="checkbox" checked />
+        <span class="toggle-ui" aria-hidden="true"></span>
+        <span>Auto-fill missing rewards with <strong>Waitlist #…</strong> to match number of people</span>
+      </label>
+
+      <div class="actions">
+        <button id="assignBtn" class="btn primary">
+          Assign randomly
+        </button>
+        <button id="copyBtn" class="btn" type="button">
+          Copy TSV
+        </button>
+      </div>
+    </div>
+
+    <div class="ballot-results">
+      <div class="results-head">
+        <div>
+          <h2>Results</h2>
+          <p class="mini">Format: <code>person[TAB]reward</code> (Excel-friendly)</p>
+        </div>
+        <div class="status" id="statusText">Ready.</div>
+      </div>
+
+      <label class="field">
+        <textarea id="results" rows="12" readonly placeholder="person    reward"></textarea>
+      </label>
+    </div>
+  </div>
+</div>
+
+<style>
+  :root{
+    --bg1:#0b1220;
+    --bg2:#0f1b31;
+    --card:#0e1628cc;
+    --card2:#0b1323cc;
+    --text:#eaf0ff;
+    --muted:#b7c3e1;
+    --muted2:#91a2c8;
+    --line:#263552;
+    --accent:#7c5cff;
+    --accent2:#22c55e;
+    --danger:#ef4444;
+
+    --radius:16px;
+    --shadow: 0 18px 45px rgba(0,0,0,.35);
+  }
+
+  *{ box-sizing:border-box; }
+  .ballot-page{
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    padding: 28px 14px;
+    color: var(--text);
+    background:
+      radial-gradient(1200px 700px at 15% 10%, rgba(124,92,255,.25), transparent 60%),
+      radial-gradient(900px 600px at 85% 30%, rgba(34,197,94,.18), transparent 55%),
+      linear-gradient(180deg, var(--bg1), var(--bg2));
+    min-height: 100vh;
+  }
+
+  .ballot-card{
+    max-width: 980px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, var(--card), var(--card2));
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 18px;
+    backdrop-filter: blur(10px);
+  }
+
+  .ballot-header{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap: 16px;
+    padding: 8px 6px 14px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+
+  .ballot-header h1{
+    font-size: 22px;
+    margin: 0 0 6px;
+    letter-spacing: -0.02em;
+  }
+  .ballot-header p{
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .ballot-badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 8px;
+    justify-content:flex-end;
+    padding-top: 2px;
+  }
+  .badge{
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.05);
+    color: var(--text);
+    white-space:nowrap;
+  }
+  .badge.subtle{
+    color: var(--muted);
+    border-color: rgba(255,255,255,.08);
+  }
+
+  .ballot-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 14px 6px 0;
+  }
+  @media (min-width: 860px){
+    .ballot-grid{ grid-template-columns: 1fr 1fr; }
+  }
+
+  .field{
+    display:block;
+  }
+  .field-label{
+    display:flex;
+    align-items:baseline;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text);
+  }
+  .hint{
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--muted2);
+  }
+
+  textarea{
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(10,16,30,.55);
+    color: var(--text);
+    padding: 12px 12px;
+    outline: none;
+    resize: vertical;
+    line-height: 1.45;
+    font-size: 14px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+  }
+  textarea::placeholder{ color: rgba(183,195,225,.55); }
+  textarea:focus{
+    border-color: rgba(124,92,255,.65);
+    box-shadow: 0 0 0 4px rgba(124,92,255,.18);
+  }
+
+  .ballot-controls{
+    display:flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 6px;
+  }
+
+  .toggle{
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    user-select:none;
+  }
+  .toggle input{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+  }
+  .toggle-ui{
+    width: 44px;
+    height: 26px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.12);
+    position: relative;
+    flex: 0 0 auto;
+    transition: .2s ease;
+  }
+  .toggle-ui::after{
+    content:"";
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.85);
+    position:absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    transition: .2s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,.35);
+  }
+  .toggle input:checked + .toggle-ui{
+    background: rgba(34,197,94,.18);
+    border-color: rgba(34,197,94,.40);
+  }
+  .toggle input:checked + .toggle-ui::after{
+    left: 21px;
+    background: rgba(255,255,255,.92);
+  }
+
+  .actions{
+    display:flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .btn{
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.06);
+    color: var(--text);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: transform .06s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn:hover{
+    background: rgba(255,255,255,.09);
+    border-color: rgba(255,255,255,.18);
+  }
+  .btn:active{ transform: translateY(1px); }
+
+  .btn.primary{
+    background: linear-gradient(180deg, rgba(124,92,255,.95), rgba(124,92,255,.70));
+    border-color: rgba(124,92,255,.70);
+  }
+  .btn.primary:hover{
+    background: linear-gradient(180deg, rgba(124,92,255,1), rgba(124,92,255,.78));
+  }
+
+  .ballot-results{
+    padding: 6px 6px 4px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+
+  .results-head{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap: 14px;
+    margin: 8px 0 10px;
+  }
+  .results-head h2{
+    margin: 0 0 4px;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+  }
+  .mini{
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  code{
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.08);
+    padding: 2px 6px;
+    border-radius: 8px;
+    color: var(--text);
+  }
+
+  .status{
+    font-size: 12px;
+    color: var(--muted2);
+    padding-top: 2px;
+    text-align:right;
+  }
+
+  #results{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    white-space: pre;
+  }
+</style>
+
+<script>
+  function parseList(text) {
+    return text
+      .split(/\r?\n|,|;/g)
+      .map(s => s.trim())
+      .filter(Boolean);
+  }
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const r = new Uint32Array(1);
+      crypto.getRandomValues(r);
+      const j = r[0] % (i + 1);
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function ensureRewardsCount(rewards, targetCount) {
+    const out = rewards.slice();
+    let idx = 1;
+    while (out.length < targetCount) {
+      out.push(`Waitlist ${idx}`);
+      idx++;
+    }
+    return out;
+  }
+
+  function assign(names, rewards, autoWaitlist) {
+    const uniqueNames = Array.from(new Set(names));
+    let rewardList = Array.from(new Set(rewards));
+
+    if (autoWaitlist) {
+      rewardList = ensureRewardsCount(rewardList, uniqueNames.length);
+    }
+
+    const shuffledNames = shuffle(uniqueNames);
+    const shuffledRewards = shuffle(rewardList);
+
+    const count = Math.min(shuffledNames.length, shuffledRewards.length);
+
+    const pairs = [];
+    for (let i = 0; i < count; i++) {
+      pairs.push({ person: shuffledNames[i], reward: shuffledRewards[i] });
+    }
+
+    return { pairs, peopleCount: uniqueNames.length, rewardsCount: rewardList.length };
+  }
+
+  function toTSV(pairs) {
+    const lines = ["person\treward"];
+    for (const p of pairs) lines.push(`${p.person}\t${p.reward}`);
+    return lines.join("\n");
+  }
+
+  function updateCounts() {
+    const names = parseList(document.getElementById("names").value);
+    const rewards = parseList(document.getElementById("rewards").value);
+    document.getElementById("countsBadge").textContent =
+      `${new Set(names).size} people • ${new Set(rewards).size} rewards`;
+  }
+
+  function setStatus(msg) {
+    document.getElementById("statusText").textContent = msg;
+  }
+
+  document.getElementById("names").addEventListener("input", updateCounts);
+  document.getElementById("rewards").addEventListener("input", updateCounts);
+
+  document.getElementById("assignBtn").addEventListener("click", () => {
+    const names = parseList(document.getElementById("names").value);
+    const rewards = parseList(document.getElementById("rewards").value);
+    const autoWaitlist = document.getElementById("autoWaitlist").checked;
+
+    const { pairs, peopleCount, rewardsCount } = assign(names, rewards, autoWaitlist);
+
+    document.getElementById("results").value = toTSV(pairs);
+
+    if (peopleCount === 0 || rewardsCount === 0) {
+      setStatus("Add people and rewards to generate results.");
+    } else if (autoWaitlist) {
+      setStatus(`Assigned ${pairs.length}. Auto-waitlist is ON.`);
+    } else {
+      setStatus(`Assigned ${pairs.length}. (Counts may differ.)`);
+    }
+  });
+
+  document.getElementById("copyBtn").addEventListener("click", async () => {
+    const tsv = document.getElementById("results").value;
+    if (!tsv.trim()) { setStatus("Nothing to copy yet."); return; }
+
+    try {
+      await navigator.clipboard.writeText(tsv);
+      setStatus("Copied to clipboard ✅");
+    } catch (e) {
+      // Fallback: select text for manual copy
+      const el = document.getElementById("results");
+      el.focus();
+      el.select();
+      setStatus("Clipboard blocked—selected text. Press Ctrl+C.");
+    }
+  });
+
+  // initial
+  updateCounts();
+  setStatus("Ready.");
+</script>
