@@ -263,11 +263,11 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     function parseList(text) {
-      return text
-        .split(/\r?\n|,|;/g)
-        .map(s => s.trim())
-        .filter(Boolean);
-    }
+    return text
+      .split(/\r?\n|,|;/g)
+      .map(s => s.trim())
+      .filter(Boolean);
+  }
 
     function shuffle(arr) {
       const a = arr.slice();
@@ -291,21 +291,24 @@
     }
 
     function assign(names, rewards, autoWaitlist) {
+      // People: make unique (optional, but usually desired)
       const uniqueNames = Array.from(new Set(names));
-      let rewardList = Array.from(new Set(rewards));
+
+      // Rewards: keep exact order as provided
+      let rewardList = rewards.slice();
 
       if (autoWaitlist) {
         rewardList = ensureRewardsCount(rewardList, uniqueNames.length);
       }
 
+      // Shuffle people only
       const shuffledNames = shuffle(uniqueNames);
-      const shuffledRewards = shuffle(rewardList);
 
-      const count = Math.min(shuffledNames.length, shuffledRewards.length);
+      const count = Math.min(shuffledNames.length, rewardList.length);
 
       const pairs = [];
       for (let i = 0; i < count; i++) {
-        pairs.push({ person: shuffledNames[i], reward: shuffledRewards[i] });
+        pairs.push({ person: shuffledNames[i], reward: rewardList[i] }); // <-- reward order preserved
       }
 
       return { pairs, peopleCount: uniqueNames.length, rewardsCount: rewardList.length };
@@ -317,17 +320,15 @@
       return lines.join("\n");
     }
 
-    function setStatus(msg) {
-      document.getElementById("statusText").textContent = msg;
-    }
-
     function updateCounts() {
       const names = parseList(document.getElementById("names").value);
       const rewards = parseList(document.getElementById("rewards").value);
-      const peopleCount = new Set(names).size;
-      const rewardsCount = new Set(rewards).size;
+      document.getElementById("countsBadge").textContent =
+        `${new Set(names).size} people • ${rewards.length} rewards`;
+    }
 
-      document.getElementById("countsText").textContent = `${peopleCount} people • ${rewardsCount} rewards`;
+    function setStatus(msg) {
+      document.getElementById("statusText").textContent = msg;
     }
 
     document.getElementById("names").addEventListener("input", updateCounts);
@@ -345,9 +346,9 @@
       if (peopleCount === 0 || rewardsCount === 0) {
         setStatus("Add people and rewards to generate results.");
       } else if (autoWaitlist) {
-        setStatus(`Assigned ${pairs.length}. Auto-waitlist is ON.`);
+        setStatus(`Assigned ${pairs.length}. Rewards kept in input order. Auto-waitlist is ON.`);
       } else {
-        setStatus(`Assigned ${pairs.length}. (Counts may differ.)`);
+        setStatus(`Assigned ${pairs.length}. Rewards kept in input order.`);
       }
     });
 
@@ -366,7 +367,9 @@
       }
     });
 
+    // initial
     updateCounts();
+    setStatus("Ready.");
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
