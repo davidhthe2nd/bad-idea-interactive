@@ -309,11 +309,14 @@
     }
 
     function updateCounts() {
-      const names = parseList(document.getElementById("names").value);
-      const rewards = parseList(document.getElementById("rewards").value);
-      document.getElementById("countsBadge").textContent =
-        `${new Set(names).size} people • ${rewards.length} rewards`;
-    }
+    const names = parseList(document.getElementById("names").value);
+    const rewards = parseList(document.getElementById("rewards").value);
+
+    const countsEl = document.getElementById("countsText");
+    if (!countsEl) return;
+
+    countsEl.textContent = `${new Set(names).size} people • ${rewards.length} rewards`;
+  }
 
     function setStatus(msg) {
       document.getElementById("statusText").textContent = msg;
