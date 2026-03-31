@@ -1,7 +1,7 @@
 .section.hero {
   min-height: 90vh;
-  background: $black;
-  color: $white;
+  background: $white;
+  color: $black;
   display: flex;
   align-items: center;
   padding: $spacing-6 0;
@@ -21,12 +21,12 @@
   font-family: $font-headings;
   font-size: clamp(2rem, 5vw, 3.2rem);
   line-height: 1.15;
-  color: $white;
+  color: $black;
   margin-bottom: $spacing-3;
 }
 
 .section.hero p {
-  color: rgba(255, 255, 255, 0.75);
+  color: $mid-grey;
   font-size: 1.1rem;
   max-width: 480px;
   margin-bottom: $spacing-4;
@@ -34,11 +34,6 @@
 
 .hero-ctas {
   margin-top: $spacing-4;
-}
-
-.section.hero .about-title,
-.section.hero .about-list li {
-  color: $black;
 }
 
 .section.hero .section-title::after {
