@@ -97,3 +97,52 @@
   color: $primary;
   margin-bottom: 10px;
 }
+
+
+.section.hero {
+  min-height: 90vh;
+  background: $black;
+  color: $white;
+  display: flex;
+  align-items: center;
+  padding: $spacing-6 0;
+}
+
+.hero-eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: $primary;
+  font-weight: 600;
+  margin-bottom: $spacing-2;
+}
+
+.hero-title {
+  font-family: $font-headings;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  color: $white;
+  margin-bottom: $spacing-3;
+}
+
+.section.hero p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.1rem;
+  max-width: 480px;
+  margin-bottom: $spacing-4;
+}
+
+.hero-ctas {
+  margin-top: $spacing-4;
+}
+
+.section.hero .about-title,
+.section.hero .about-list li {
+  color: $black;
+}
+
+.section.hero .section-title::after {
+  display: none;
+}
+
