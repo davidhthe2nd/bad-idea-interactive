@@ -50,8 +50,8 @@
     .navbar.sticky-top {
       transition: box-shadow 0.25s ease;
     }
-  
-    body.scrolled .navbar.sticky-top {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    }
+}
+
+body.scrolled .navbar.sticky-top {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
