@@ -1,0 +1,68 @@
+.section.consulting-hero {
+  min-height: 90vh;
+  background: $black;
+  color: $white;
+  display: flex;
+  align-items: center;
+  padding: $spacing-6 0;
+}
+
+.consulting-hero .hero-title {
+  font-family: $font-headings;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  color: $white;
+  margin-bottom: $spacing-3;
+}
+
+.consulting-hero p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.consulting-hero .about-list li {
+  color: $black;
+}
+
+.consulting-langs {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: $spacing-3;
+  letter-spacing: 0.05em;
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: $spacing-2;
+}
+
+.service-timeline {
+  font-size: 0.8rem;
+  color: $mid-grey;
+  font-style: italic;
+  margin-top: $spacing-1;
+}
+
+.consulting-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: $white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: $spacing-2 $spacing-3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $shadow-soft;
+}
+
+.topbar-back {
+  color: $black;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+
+  &:hover {
+    color: $primary;
+  }
+}

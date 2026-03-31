@@ -366,6 +366,74 @@ body.scrolled .navbar.sticky-top {
   margin-top: 16px;
 }
 
+.section.consulting-hero {
+  min-height: 90vh;
+  background: #0B0B0B;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  padding: 64px 0;
+}
+
+.consulting-hero .hero-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}
+
+.consulting-hero p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.consulting-hero .about-list li {
+  color: #0B0B0B;
+}
+
+.consulting-langs {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.service-timeline {
+  font-size: 0.8rem;
+  color: #A3A3A3;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.consulting-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #FFFFFF;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.09);
+}
+
+.topbar-back {
+  color: #0B0B0B;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.topbar-back:hover {
+  color: #D62828;
+}
+
 .footer {
   background: #0B0B0B;
   color: #FFFFFF;
