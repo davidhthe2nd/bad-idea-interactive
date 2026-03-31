@@ -41,18 +41,16 @@
             <div class="navbar-collapse collapse" id="navbarsExample09">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="#" data-i18n="nav.home"></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#about">About Us</a>
+                <a class="nav-link" href="#about" data-i18n="nav.about"></a>
                 </li>
                 <li class="nav-item dropdown">
                 <!-- <a class="nav-link dropdown-toggle" href="#games" data-bs-toggle="dropdown" aria-expanded="false">
                     Games
                 </a> -->
-                <a class="nav-link" href="#games">
-                    Games
-                </a>
+                <a class="nav-link" href="#games" data-i18n="nav.games"></a>
                 <!-- <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Escape From Hell</a></li>
                     <li><a class="dropdown-item" href="#">There Is No Escape</a></li>
@@ -60,15 +58,18 @@
                 </ul> -->
                 </li>
                 <li class="nav-item dropdown">
-                <a class="nav-link" href="#apps">
-                    Apps
-                </a>
+                <a class="nav-link" href="#apps" data-i18n="nav.apps"></a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#apps">Mandarin Learning</a></li>
                 </ul>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
+                <a class="nav-link" href="#contact" data-i18n="nav.contact"></a>
+                </li>
+                <li class="nav-item lang-selector ms-lg-3">
+                    <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">🇬🇧 EN</button>
+                    <button class="lang-btn" data-lang="es" onclick="setLanguage('es')">🇪🇸 ES</button>
+                    <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">🇫🇷 FR</button>
                 </li>
             </ul>
 
@@ -83,36 +84,26 @@
         <div class="container">
             <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <span class="hero-eyebrow">Indie Studio · Games · Apps</span>
-                <h1 class="hero-title">Turning bad ideas into joyful experiences</h1>
-                <p class="section-lead">
-                Bad Idea Interactive is an indie studio turning “bad ideas”
-                into joyful arcade experiences with a twist... and learning apps.
-                </p>
-                <p>
-                Founded by an industry veteran, the studio blends
-                classic game feel with modern production discipline: clear scope,
-                tight feedback loops and a ruthless focus on player experience.
-                </p>
-                <p>
-                Every project is an excuse to explore new mechanics, teach
-                something useful, or simply make people smile for a few minutes.
-                </p>
+                <span class="hero-eyebrow" data-i18n="hero.eyebrow"></span>
+                <h1 class="hero-title" data-i18n="hero.title"></h1>
+                <p class="section-lead" data-i18n="hero.lead"></p>
+                <p data-i18n="hero.p1"></p>
+                <p data-i18n="hero.p2"></p>
                 <div class="hero-ctas">
-                    <a href="#games" class="btn btn-primary me-3">See our work</a>
-                    <a href="/consulting" class="btn btn-ghost">Work with us →</a>
+                    <a href="#games" class="btn btn-primary me-3" data-i18n="hero.cta1"></a>
+                    <a href="/consulting" class="btn btn-ghost" data-i18n="hero.cta2"></a>
                 </div>
             </div>
 
         <div class="col-lg-5 offset-lg-1">
             <div class="about-highlight">
-            <h3 class="about-title">What we care about</h3>
+            <h3 class="about-title" data-i18n="hero.whatwecare"></h3>
             <ul class="about-list">
-                <li>📼 Arcade-inspired gameplay with modern polish</li>
-                <li>🧠 Clear, teachable systems and readable design</li>
-                <li>🌍 Local flavor & cultural references that feel personal</li>
-                <li>🔁 Small, replayable experiences with strong game feel</li>
-                <li>🤝 Transparent, production-minded collaboration</li>
+                <li data-i18n="hero.care1"></li>
+                <li data-i18n="hero.care2"></li>
+                <li data-i18n="hero.care3"></li>
+                <li data-i18n="hero.care4"></li>
+                <li data-i18n="hero.care5"></li>
             </ul>
             </div>
         </div>
@@ -124,8 +115,8 @@
         <div class="container">
         <div class="row text-left mb-4">
             <div class="col">
-            <h3 class="section-title">Core Contributors</h3>
-            <p class="text-muted">The minds (and paws) behind Bad Idea Interactive.</p>
+            <h3 class="section-title" data-i18n="team.title"></h3>
+            <p class="text-muted" data-i18n="team.subtitle"></p>
             </div>
         </div>
 
@@ -139,14 +130,8 @@
                     class="team-photo mb-3">
 
                 <h4>David</h4>
-                <p class="role">Founder · Product & Games</p>
-
-                <p class="small">
-                Product leader and game developer with 15+ years of experience
-                across localization, agile delivery and digital products.
-                Passionate about clarity, systems thinking, and building tools
-                that actually help teams move forward.
-                </p>
+                <p class="role" data-i18n="team.david.role"></p>
+                <p class="small" data-i18n="team.david.bio"></p>
             </div>
             </div>
 
@@ -158,13 +143,8 @@
                     class="team-photo mb-3">
 
                 <h4>Pepper</h4>
-                <p class="role">Chief Morale Officer · Security & QA</p>
-
-                <p class="small">
-                Oversees strategic naps, office security patrols,
-                and morale optimization. Specializes in quality assurance
-                through intense staring and keyboard supervision.
-                </p>
+                <p class="role" data-i18n="team.pepper.role"></p>
+                <p class="small" data-i18n="team.pepper.bio"></p>
             </div>
             </div>
 
@@ -177,10 +157,8 @@
         <div class="container">
             <div class="row mb-4">
                 <div class="col">
-                    <h2 class="section-title">Games</h2>
-                    <p class="section-lead">
-                        Small, focused arcade experiences built with a production mindset and a lot of Christmas lights.
-                    </p>
+                    <h2 class="section-title" data-i18n="games.title"></h2>
+                    <p class="section-lead" data-i18n="games.lead"></p>
                 </div>
             </div>
     
@@ -191,21 +169,15 @@
                         <img src="assets/img/abel-saves-christmas.png" class="card-img-top"
                             alt="Abel Saves Christmas screenshot">
                         <div class="card-body">
-                            <h3 class="card-title">Mayor Saves Christmas</h3>
-                            <p class="card-text">
-                                A fast-paced arcade platformer set in Vigo. Trap enemies, juggle combos and
-                                save the city’s legendary Christmas lights. Campaign and endless mode.
-                            </p>
+                            <h3 class="card-title" data-i18n="games.mayor.title"></h3>
+                            <p class="card-text" data-i18n="games.mayor.desc"></p>
                             <div class="game-meta">
                                 <span class="game-tag">Arcade Platformer</span>
                                 <span class="game-tag">PC & Mobile</span>
                                 <span class="game-tag game-tag-status">Released</span>
                             </div>
                         </div>
-                        <a href="https://davidhthe1st.itch.io/mayor-saves-christmas" class="btn-primary btn w-100 mt-3" target="_blank"
-                            rel="noopener">
-                            Play on Itch.io →
-                        </a>
+                        <a href="https://davidhthe1st.itch.io/mayor-saves-christmas" class="btn-primary btn w-100 mt-3" target="_blank" rel="noopener" data-i18n="games.mayor.cta"></a>
                     </div>
                 </div>
     
@@ -215,21 +187,15 @@
                         <img src="assets/img/escape_from_hell.png" class="card-img-top"
                             alt="Escape From Hell prototype screenshot">
                         <div class="card-body">
-                            <h3 class="card-title">Escape From Hell</h3>
-                            <p class="card-text">
-                                A score-chasing prototype exploring tight movement, pressure, and
-                                “one more run” pacing in a compact arena.
-                            </p>
+                            <h3 class="card-title" data-i18n="games.escape.title"></h3>
+                            <p class="card-text" data-i18n="games.escape.desc"></p>
                             <div class="game-meta">
                                 <span class="game-tag">Endless runner</span>
                                 <span class="game-tag">Procedural generation</span>
                                 <span class="game-tag game-tag-status">Released</span>
                             </div>
                         </div>
-                        <a href="https://davidhthe1st.itch.io/escape-from-hell" class="btn-primary btn w-100 mt-3" target="_blank"
-                            rel="noopener">
-                            Play on Itch.io →
-                        </a>
+                        <a href="https://davidhthe1st.itch.io/escape-from-hell" class="btn-primary btn w-100 mt-3" target="_blank" rel="noopener" data-i18n="games.escape.cta"></a>
                     </div>
                 </div>
     
@@ -238,11 +204,8 @@
                     <div class="card game-card">
                         <img src="assets/img/secret-project.png" class="card-img-top" alt="Upcoming project teaser">
                         <div class="card-body">
-                            <h3 class="card-title">Unannounced Project</h3>
-                            <p class="card-text">
-                                A new experiment mixing arcade readability, learning elements,
-                                and small-session play. More details coming soon.
-                            </p>
+                            <h3 class="card-title" data-i18n="games.secret.title"></h3>
+                            <p class="card-text" data-i18n="games.secret.desc"></p>
                             <div class="game-meta">
                                 <span class="game-tag">In Development</span>
                                 <span class="game-tag">Arcade / Experimental</span>
@@ -260,11 +223,8 @@
         <div class="container">
             <div class="row mb-4">
                 <div class="col">
-                    <h2 class="section-title">Apps</h2>
-                    <p class="section-lead">
-                        Small, focused tools built with the same care as our games — designed to make learning and daily
-                        habits feel more playful.
-                    </p>
+                    <h2 class="section-title" data-i18n="apps.title"></h2>
+                    <p class="section-lead" data-i18n="apps.lead"></p>
                 </div>
             </div>
 
@@ -275,11 +235,8 @@
                         <img src="assets/img/mandarin_app_2.png" class="card-img-top"
                             alt="Mandarin learning app screenshot">
                         <div class="card-body">
-                            <h3 class="card-title">Mandarin Daily</h3>
-                            <p class="card-text">
-                                A focused flashcard app for Mandarin learners, mixing HSK vocabulary,
-                                example sentences and spaced repetition into short, daily sessions.
-                            </p>
+                            <h3 class="card-title" data-i18n="apps.mandarin.title"></h3>
+                            <p class="card-text" data-i18n="apps.mandarin.desc"></p>
                             <div class="app-meta">
                                 <span class="app-tag">Language Learning</span>
                                 <span class="app-tag">Mobile</span>
@@ -295,11 +252,8 @@
                         <img src="assets/img/work-in-progress.jpg" class="card-img-top"
                             alt="Productivity tool teaser">
                         <div class="card-body">
-                            <h3 class="card-title">Studio Tools</h3>
-                            <p class="card-text">
-                                Internal tools and small utilities to streamline production,
-                                prototyping, and playtesting — some of which may be released publicly.
-                            </p>
+                            <h3 class="card-title" data-i18n="apps.tools.title"></h3>
+                            <p class="card-text" data-i18n="apps.tools.desc"></p>
                             <div class="app-meta">
                                 <span class="app-tag">Productivity</span>
                                 <span class="app-tag app-tag-status">In R&amp;D</span>
@@ -318,9 +272,7 @@
                                     Random Reward Generator
                                 </a>
                             </h3>
-                            <p class="card-text">
-                                A tool allowing you to enter a list of names and a list of rewards, and it randomly assigns each reward to one of the participants.
-                            </p>
+                            <p class="card-text" data-i18n="apps.reward.desc"></p>
                             <div class="app-meta">
                                 <span class="app-tag">Productivity</span>
                                 <span class="app-tag app-tag-status">Released</span>
@@ -335,9 +287,9 @@
 
     <section class="cta-banner">
         <div class="container text-center">
-            <h2>Got a project in mind?</h2>
-            <p>Whether you need a collaborator, a consultant or just a fresh perspective — let's talk.</p>
-            <a href="#contact" class="btn btn-primary btn-lg">Get in touch</a>
+            <h2 data-i18n="cta.title"></h2>
+            <p data-i18n="cta.desc"></p>
+            <a href="#contact" class="btn btn-primary btn-lg" data-i18n="cta.btn"></a>
         </div>
     </section>
 
@@ -389,15 +341,12 @@
                     <div class="footer-brand d-flex align-items-center mb-2">
                         <img src="assets/img/logo_name.png" alt="Bad Idea Interactive" height="45" class="me-2">
                     </div>
-                    <p class="footer-text">
-                        Indie studio turning “bad ideas” into focused arcade games, learning tools
-                        and playful experiments.
-                    </p>
+                    <p class=”footer-text” data-i18n=”footer.tagline”></p>
                 </div>
     
                 <!-- Column 2: Navigation links -->
                 <div class="col-md-4">
-                    <h4 class="footer-heading">Explore</h4>
+                    <h4 class="footer-heading" data-i18n="footer.explore"></h4>
                     <ul class="footer-links">
                         <li><a href="#about">About</a></li>
                         <li><a href="#games">Games</a></li>
@@ -407,10 +356,8 @@
     
                 <!-- Column 3: Contact + socials -->
                 <div class="col-md-4">
-                    <h4 class="footer-heading">Contact</h4>
-                    <p class="footer-text">
-                        For collaborations, consulting or speaking:
-                    </p>
+                    <h4 class="footer-heading" data-i18n="footer.contact"></h4>
+                    <p class="footer-text" data-i18n="footer.contact.desc"></p>
                     <p class="footer-text">
                         <a href="mailto:hello@badideainteractive.com">hello@badideainteractive.com</a>
                     </p>
@@ -448,5 +395,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/i18n.js"></script>
 </body>
 </html>
