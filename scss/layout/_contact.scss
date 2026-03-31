@@ -1,0 +1,49 @@
+.cta-banner {
+  background: $primary;
+  color: $white;
+  padding: $spacing-6 0;
+  text-align: center;
+
+  h2 {
+    color: $white;
+    font-size: 2rem;
+    margin-bottom: $spacing-2;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.1rem;
+    margin-bottom: $spacing-4;
+  }
+
+  .btn-primary {
+    background: $white;
+    color: $primary;
+    font-weight: 700;
+
+    &:hover {
+      background: darken($white, 8%);
+      color: $primary;
+    }
+  }
+}
+
+.contact-form {
+  .form-control,
+  .form-select {
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 3px rgba($primary, 0.12);
+      outline: none;
+    }
+  }
+
+  button[type="submit"] {
+    margin-top: $spacing-2;
+  }
+}

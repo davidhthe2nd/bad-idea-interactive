@@ -67,6 +67,9 @@
                     <li><a class="dropdown-item" href="#apps">Mandarin Learning</a></li>
                 </ul>
                 </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+                </li>
             </ul>
 
             <!-- you can keep/remove the search form later -->
@@ -342,8 +345,54 @@
         </div>
     </section>
 
-    <!-- TODO: Contact -->
-    <!-- TODO: Footer -->
+    <section class="cta-banner">
+        <div class="container text-center">
+            <h2>Got a project in mind?</h2>
+            <p>Whether you need a collaborator, a consultant or just a fresh perspective — let's talk.</p>
+            <a href="#contact" class="btn btn-primary btn-lg">Get in touch</a>
+        </div>
+    </section>
+
+    <section id="contact" class="section light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="section-title">Work with us</h2>
+                    <p class="section-lead">Collaborations, consulting, speaking — or just a good conversation.</p>
+                    <form action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST" class="contact-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required placeholder="Your name">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+                            <div class="col-12">
+                                <label for="inquiry" class="form-label">Inquiry type</label>
+                                <select class="form-select" id="inquiry" name="inquiry">
+                                    <option value="" disabled selected>Select an inquiry type</option>
+                                    <option value="collaboration">Collaboration</option>
+                                    <option value="consulting">Consulting</option>
+                                    <option value="speaking">Speaking</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="company" class="form-label">Company / Project details</label>
+                                <textarea class="form-control" id="company" name="company" rows="4" placeholder="Tell us about your project or company"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100">Send message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <div class="row gy-4 align-items-start">
