@@ -43,6 +43,67 @@
   margin-top: $spacing-1;
 }
 
+.case-card .card-body {
+  padding: $spacing-4;
+}
+
+.case-tag {
+  display: inline-block;
+  background: rgba($primary, 0.08);
+  color: $primary;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 4px 10px;
+  margin-bottom: $spacing-2;
+}
+
+.calendly-embed {
+  margin-top: $spacing-4;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.section.dark .section-title {
+  color: $white;
+}
+
+.section.dark .section-title::after {
+  background: $primary;
+}
+
+.section.dark p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.process-step {
+  padding: $spacing-4 $spacing-3;
+  position: relative;
+}
+
+.process-number {
+  font-family: $font-headings;
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba($primary, 0.15);
+  line-height: 1;
+  margin-bottom: $spacing-2;
+}
+
+.process-step h3 {
+  font-family: $font-headings;
+  font-size: 1.1rem;
+  margin-bottom: $spacing-1;
+}
+
+.consulting-photo {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 480px;
+  box-shadow: $shadow-medium;
+}
+
 .consulting-topbar {
   position: sticky;
   top: 0;
