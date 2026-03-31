@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sass --version)",
+      "Bash(node-sass --version)",
+      "Bash(where sass:*)",
+      "Bash(where node:*)",
+      "Bash(npx sass:*)"
+    ]
+  }
+}
