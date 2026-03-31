@@ -1,4 +1,4 @@
-.hero {
+.section.hero {
   min-height: 90vh;
   background: $black;
   color: $white;
@@ -25,7 +25,7 @@
   margin-bottom: $spacing-3;
 }
 
-.hero p {
+.section.hero p {
   color: rgba(255, 255, 255, 0.75);
   font-size: 1.1rem;
   max-width: 480px;
@@ -36,11 +36,11 @@
   margin-top: $spacing-4;
 }
 
-.hero .about-title,
-.hero .about-list li {
+.section.hero .about-title,
+.section.hero .about-list li {
   color: $black;
 }
 
-.hero .section-title::after {
+.section.hero .section-title::after {
   display: none;
 }
