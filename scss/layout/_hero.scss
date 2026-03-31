@@ -17,23 +17,30 @@
   margin-bottom: $spacing-2;
 }
 
-.hero h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+.hero-title {
+  font-family: $font-headings;
+  font-size: clamp(2rem, 5vw, 3.2rem);
   line-height: 1.15;
   color: $white;
   margin-bottom: $spacing-3;
 }
 
 .hero p {
-  color: $mid-grey;
+  color: rgba(255, 255, 255, 0.75);
   font-size: 1.1rem;
   max-width: 480px;
   margin-bottom: $spacing-4;
 }
 
-.hero-visual {
-  min-height: 320px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.hero-ctas {
+  margin-top: $spacing-4;
+}
+
+.hero .about-title,
+.hero .about-list li {
+  color: $black;
+}
+
+.hero .section-title::after {
+  display: none;
 }
