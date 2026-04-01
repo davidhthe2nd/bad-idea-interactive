@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Consulting — David Flórez Herrero</title>
+  <title>Consulting — David Florez Herrero</title>
 
   <!-- 1) Bootstrap first -->
   <link
@@ -18,31 +18,36 @@
 
     <div class="consulting-topbar">
         <a href="/" class="topbar-back">← Bad Idea Interactive</a>
-        <a href="#book" class="btn btn-primary">Book a discovery call</a>
+        <div class="lang-selector">
+            <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">🇬🇧 EN</button>
+            <button class="lang-btn" data-lang="es" onclick="setLanguage('es')">🇪🇸 ES</button>
+            <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">🇫🇷 FR</button>
+        </div>
+        <a href="#book" class="btn btn-primary" data-i18n="consulting.hero.cta1"></a>
     </div>
 
     <section id="hero" class="section consulting-hero">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <span class="hero-eyebrow">Freelance Consultant · International</span>
-                    <h1 class="hero-title">Turning complexity into clear, actionable progress</h1>
-                    <p>I help companies and entrepreneurs move forward on international projects — with clarity, structure, and a pragmatic approach adapted to each market.</p>
-                    <p class="consulting-langs">🌍 EN · ES · FR · PT · 中文</p>
+                    <span class="hero-eyebrow" data-i18n="consulting.hero.eyebrow"></span>
+                    <h1 class="hero-title" data-i18n="consulting.hero.title"></h1>
+                    <p data-i18n="consulting.hero.subtext"></p>
+                    <p class="consulting-langs" data-i18n="consulting.hero.langs"></p>
                     <div class="hero-ctas">
-                        <a href="#book" class="btn btn-primary me-3">Book a discovery call</a>
-                        <a href="#services" class="btn btn-ghost">See my services</a>
+                        <a href="#book" class="btn btn-primary me-3" data-i18n="consulting.hero.cta1"></a>
+                        <a href="#services" class="btn btn-ghost" data-i18n="consulting.hero.cta2"></a>
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
                     <div class="about-highlight">
-                        <h3 class="about-title">What I bring</h3>
+                        <h3 class="about-title" data-i18n="consulting.hero.whatibring"></h3>
                         <ul class="about-list">
-                            <li>🎯 15+ years in product, delivery and digital projects</li>
-                            <li>🌐 Fluent in 5 languages, active in European markets</li>
-                            <li>🔁 Agile and localization expertise</li>
-                            <li>🤝 One point of contact, end to end</li>
-                            <li>📦 Clear scope, tight feedback loops</li>
+                            <li data-i18n="consulting.hero.bring1"></li>
+                            <li data-i18n="consulting.hero.bring2"></li>
+                            <li data-i18n="consulting.hero.bring3"></li>
+                            <li data-i18n="consulting.hero.bring4"></li>
+                            <li data-i18n="consulting.hero.bring5"></li>
                         </ul>
                     </div>
                 </div>
@@ -54,48 +59,59 @@
         <div class="container">
             <div class="row mb-4">
                 <div class="col">
-                    <h2 class="section-title">What I do</h2>
-                    <p class="section-lead">Focused engagements, concrete outcomes.</p>
+                    <h2 class="section-title" data-i18n="consulting.services.title"></h2>
+                    <p class="section-lead" data-i18n="consulting.services.lead"></p>
                 </div>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-4">
                     <div class="card app-card h-100">
                         <div class="card-body">
                             <div class="service-icon">🗺️</div>
-                            <h3 class="card-title">International Strategy</h3>
-                            <p class="card-text">Analyse your target market, identify opportunities, build a simple action plan.</p>
-                            <p class="service-timeline">Typical timeline: 1–2 weeks.</p>
+                            <h3 class="card-title" data-i18n="consulting.services.loc.title"></h3>
+                            <p class="card-text" data-i18n="consulting.services.loc.desc"></p>
+                            <p class="service-practice" data-i18n="consulting.services.whatinpractice"></p>
+                            <ul class="service-list">
+                                <li data-i18n="consulting.services.loc.li1"></li>
+                                <li data-i18n="consulting.services.loc.li2"></li>
+                                <li data-i18n="consulting.services.loc.li3"></li>
+                                <li data-i18n="consulting.services.loc.li4"></li>
+                            </ul>
+                            <p class="service-timeline" data-i18n="consulting.services.loc.timeline"></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card app-card h-100">
-                        <div class="card-body">
-                            <div class="service-icon">🗣️</div>
-                            <h3 class="card-title">Multilingual Support</h3>
-                            <p class="card-text">Communication in 5 languages, cultural adaptation, smooth stakeholder alignment.</p>
-                            <p class="service-timeline">Typical timeline: ongoing.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-4">
                     <div class="card app-card h-100">
                         <div class="card-body">
                             <div class="service-icon">📋</div>
-                            <h3 class="card-title">Project Structuring</h3>
-                            <p class="card-text">Clarify objectives, organise delivery phases, operational follow-up.</p>
-                            <p class="service-timeline">Typical timeline: 2–4 weeks.</p>
+                            <h3 class="card-title" data-i18n="consulting.services.pm.title"></h3>
+                            <p class="card-text" data-i18n="consulting.services.pm.desc"></p>
+                            <p class="service-practice" data-i18n="consulting.services.whatinpractice"></p>
+                            <ul class="service-list">
+                                <li data-i18n="consulting.services.pm.li1"></li>
+                                <li data-i18n="consulting.services.pm.li2"></li>
+                                <li data-i18n="consulting.services.pm.li3"></li>
+                                <li data-i18n="consulting.services.pm.li4"></li>
+                            </ul>
+                            <p class="service-timeline" data-i18n="consulting.services.pm.timeline"></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-4">
                     <div class="card app-card h-100">
                         <div class="card-body">
-                            <div class="service-icon">📈</div>
-                            <h3 class="card-title">Business Development</h3>
-                            <p class="card-text">Identify growth opportunities, support decision-making, strategic advisory.</p>
-                            <p class="service-timeline">Typical timeline: flexible.</p>
+                            <div class="service-icon">⚙️</div>
+                            <h3 class="card-title" data-i18n="consulting.services.ai.title"></h3>
+                            <p class="card-text" data-i18n="consulting.services.ai.desc"></p>
+                            <p class="service-practice" data-i18n="consulting.services.whatinpractice"></p>
+                            <ul class="service-list">
+                                <li data-i18n="consulting.services.ai.li1"></li>
+                                <li data-i18n="consulting.services.ai.li2"></li>
+                                <li data-i18n="consulting.services.ai.li3"></li>
+                                <li data-i18n="consulting.services.ai.li4"></li>
+                            </ul>
+                            <p class="service-timeline" data-i18n="consulting.services.ai.timeline"></p>
                         </div>
                     </div>
                 </div>
@@ -107,29 +123,29 @@
         <div class="container">
             <div class="row mb-4">
                 <div class="col">
-                    <h2 class="section-title">How it works</h2>
+                    <h2 class="section-title" data-i18n="consulting.process.title"></h2>
                 </div>
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="process-step text-center">
                         <div class="process-number">01</div>
-                        <h3>Discovery call</h3>
-                        <p>We talk through your project, context and goals. No commitment, no jargon.</p>
+                        <h3 data-i18n="consulting.process.step1.title"></h3>
+                        <p data-i18n="consulting.process.step1.desc"></p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="process-step text-center">
                         <div class="process-number">02</div>
-                        <h3>Clear proposal</h3>
-                        <p>You receive a scoped plan with timeline, deliverables and pricing within 48h.</p>
+                        <h3 data-i18n="consulting.process.step2.title"></h3>
+                        <p data-i18n="consulting.process.step2.desc"></p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="process-step text-center">
                         <div class="process-number">03</div>
-                        <h3>Delivery & follow-up</h3>
-                        <p>We move forward together with regular check-ins and concrete progress.</p>
+                        <h3 data-i18n="consulting.process.step3.title"></h3>
+                        <p data-i18n="consulting.process.step3.desc"></p>
                     </div>
                 </div>
             </div>
@@ -140,15 +156,16 @@
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-4">
-                    <img src="assets/img/david.jpg" class="consulting-photo" alt="David Flórez Herrero, freelance consultant">
+                    <img src="assets/img/david.jpg" class="consulting-photo" alt="David Florez Herrero, freelance consultant">
                 </div>
                 <div class="col-lg-7 offset-lg-1">
-                    <span class="hero-eyebrow">About me</span>
-                    <h2 class="section-title">David Flórez Herrero</h2>
-                    <p>Product leader and freelance consultant with 15+ years of experience across localization, agile delivery and international digital projects.</p>
-                    <p>I work with companies and entrepreneurs who need a pragmatic, structured partner to move their projects forward — across languages, markets and time zones.</p>
-                    <p>Based in Europe. Fluent in English, Spanish, French, Portuguese and Mandarin.</p>
-                    <a href="https://www.linkedin.com/in/david-florez-herrero-50b95b98/" class="btn btn-secondary mt-2" target="_blank">Connect on LinkedIn</a>
+                    <span class="hero-eyebrow" data-i18n="consulting.about.eyebrow"></span>
+                    <h2 class="section-title" data-i18n="consulting.about.title"></h2>
+                    <p data-i18n="consulting.about.p1"></p>
+                    <p data-i18n="consulting.about.p2"></p>
+                    <p data-i18n="consulting.about.p3"></p>
+                    <p data-i18n="consulting.about.p4"></p>
+                    <a href="https://www.linkedin.com/in/david-florez-herrero-50b95b98/" class="btn btn-secondary mt-2" target="_blank" data-i18n="consulting.about.linkedin"></a>
                 </div>
             </div>
         </div>
@@ -158,35 +175,52 @@
         <div class="container">
             <div class="row mb-4">
                 <div class="col">
-                    <h2 class="section-title">Past work</h2>
-                    <p class="section-lead">A sample of recent engagements. Details available on request.</p>
+                    <h2 class="section-title" data-i18n="consulting.work.title"></h2>
+                    <p class="section-lead" data-i18n="consulting.work.lead"></p>
                 </div>
             </div>
             <div class="row g-4">
-                <div class="col-md-6">
+                <div class="col-md-6 col-lg-4">
                     <div class="card case-card h-100">
                         <div class="card-body">
-                            <span class="case-tag">SaaS / B2B</span>
-                            <h3>Agile Transformation — European SaaS Company</h3>
-                            <p>Led a 6-month agile transformation for a 40-person product team. Introduced structured sprint cycles, stakeholder rituals and delivery metrics. Outcome: 30% reduction in time-to-release.</p>
+                            <span class="case-tag" data-i18n="consulting.work.case1.tag"></span>
+                            <h3 data-i18n="consulting.work.case1.title"></h3>
+                            <p data-i18n="consulting.work.case1.desc"></p>
                             <div class="game-meta">
-                                <span class="game-tag">Agile</span>
-                                <span class="game-tag">Product</span>
-                                <span class="game-tag">Europe</span>
+                                <span class="game-tag" data-i18n="consulting.work.case1.tag1"></span>
+                                <span class="game-tag" data-i18n="consulting.work.case1.tag2"></span>
+                                <span class="game-tag" data-i18n="consulting.work.case1.tag3"></span>
+                                <span class="game-tag" data-i18n="consulting.work.case1.tag4"></span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-lg-4">
                     <div class="card case-card h-100">
                         <div class="card-body">
-                            <span class="case-tag">Localization / International</span>
-                            <h3>Market Entry Support — LATAM Expansion</h3>
-                            <p>Supported a digital product company entering Spanish and Portuguese-speaking markets. Handled localization strategy, cultural adaptation and local partner communication. Outcome: Launched in 3 markets in 10 weeks.</p>
+                            <span class="case-tag" data-i18n="consulting.work.case2.tag"></span>
+                            <h3 data-i18n="consulting.work.case2.title"></h3>
+                            <p data-i18n="consulting.work.case2.desc"></p>
                             <div class="game-meta">
-                                <span class="game-tag">Localization</span>
-                                <span class="game-tag">LATAM</span>
-                                <span class="game-tag">Multilingual</span>
+                                <span class="game-tag" data-i18n="consulting.work.case2.tag1"></span>
+                                <span class="game-tag" data-i18n="consulting.work.case2.tag2"></span>
+                                <span class="game-tag" data-i18n="consulting.work.case2.tag3"></span>
+                                <span class="game-tag" data-i18n="consulting.work.case2.tag4"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card case-card h-100">
+                        <div class="card-body">
+                            <span class="case-tag" data-i18n="consulting.work.case3.tag"></span>
+                            <h3 data-i18n="consulting.work.case3.title"></h3>
+                            <p data-i18n="consulting.work.case3.desc"></p>
+                            <div class="game-meta">
+                                <span class="game-tag" data-i18n="consulting.work.case3.tag1"></span>
+                                <span class="game-tag" data-i18n="consulting.work.case3.tag2"></span>
+                                <span class="game-tag" data-i18n="consulting.work.case3.tag3"></span>
+                                <span class="game-tag" data-i18n="consulting.work.case3.tag4"></span>
                             </div>
                         </div>
                     </div>
@@ -197,8 +231,8 @@
 
     <section id="book" class="section dark">
         <div class="container text-center">
-            <h2 class="section-title">Book a discovery call</h2>
-            <p>30 minutes. No commitment. Let's see if we're a good fit.</p>
+            <h2 class="section-title" data-i18n="consulting.book.title"></h2>
+            <p data-i18n="consulting.book.desc"></p>
             <div class="calendly-embed">
                 <div class="calendly-inline-widget"
                      data-url="https://calendly.com/david-badideainteractive/new-meeting"
@@ -212,49 +246,39 @@
     <footer class="footer">
         <div class="container">
             <div class="row gy-4 align-items-start">
-                <!-- Column 1: Logo + tagline -->
+                <!-- Column 1: Personal brand -->
                 <div class="col-md-4">
-                    <div class="footer-brand d-flex align-items-center mb-2">
-                        <img src="assets/img/logo_name.png" alt="Bad Idea Interactive" height="45" class="me-2">
-                    </div>
-                    <p class="footer-text">
-                        Indie studio turning "bad ideas" into focused arcade games, learning tools
-                        and playful experiments.
-                    </p>
+                    <h4 class="footer-heading" data-i18n="consulting.footer.name"></h4>
+                    <p class="footer-text" data-i18n="consulting.footer.tagline"></p>
                 </div>
 
-                <!-- Column 2: Navigation links -->
+                <!-- Column 2: Navigation -->
                 <div class="col-md-4">
-                    <h4 class="footer-heading">Explore</h4>
+                    <h4 class="footer-heading">Navigation</h4>
                     <ul class="footer-links">
-                        <li><a href="/#about">About</a></li>
-                        <li><a href="/#games">Games</a></li>
-                        <li><a href="/#apps">Apps</a></li>
+                        <li><a href="#services" data-i18n="consulting.footer.nav.services"></a></li>
+                        <li><a href="#process" data-i18n="consulting.footer.nav.process"></a></li>
+                        <li><a href="#work" data-i18n="consulting.footer.nav.work"></a></li>
+                        <li><a href="#book" data-i18n="consulting.footer.nav.book"></a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3: Contact + socials -->
+                <!-- Column 3: Contact -->
                 <div class="col-md-4">
-                    <h4 class="footer-heading">Contact</h4>
-                    <p class="footer-text">
-                        For collaborations, consulting or speaking:
-                    </p>
+                    <h4 class="footer-heading" data-i18n="consulting.footer.contact.title"></h4>
+                    <p class="footer-text" data-i18n="consulting.footer.contact.desc"></p>
                     <p class="footer-text">
                         <a href="mailto:hello@badideainteractive.com">hello@badideainteractive.com</a>
                     </p>
                     <div class="footer-socials">
-                        <a href="http://linkedin.com/company/bad-idea-interactive" aria-label="LinkedIn">LinkedIn</a>
-                        <a href="https://www.instagram.com/badideaint/" aria-label="Instagram">Instagram</a>
-                        <a href="https://davidhthe1st.itch.io/" aria-label="Itch.io">Itch.io</a>
+                        <a href="https://www.linkedin.com/in/david-florez-herrero-50b95b98/" aria-label="LinkedIn">LinkedIn</a>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p class="footer-legal">
-                    © <span id="year"></span> Bad Idea Interactive. All rights reserved. All trademarks and property of their respective owners.
-                    This website and the projects showcased are original works by Bad Idea Interactive and are not affiliated with any
-                    other companies, brands, or public institutions.
+                    &copy; <span id="year"></span> David Florez Herrero. All rights reserved.
                 </p>
             </div>
         </div>
@@ -273,5 +297,6 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/i18n.js"></script>
 </body>
 </html>
