@@ -67,9 +67,11 @@
                 <a class="nav-link" href="#contact" data-i18n="nav.contact"></a>
                 </li>
                 <li class="nav-item lang-selector ms-lg-3">
-                    <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">🇬🇧 EN</button>
-                    <button class="lang-btn" data-lang="es" onclick="setLanguage('es')">🇪🇸 ES</button>
-                    <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">🇫🇷 FR</button>
+                    <select class="lang-select" onchange="setLanguage(this.value)">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                    </select>
                 </li>
             </ul>
 

@@ -17,8 +17,8 @@
 
         document.documentElement.lang = lang;
 
-        document.querySelectorAll('.lang-btn').forEach(function (btn) {
-          btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        document.querySelectorAll('.lang-select').forEach(function (sel) {
+          sel.value = lang;
         });
       })
       .catch(function (err) {

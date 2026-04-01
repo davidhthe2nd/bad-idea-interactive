@@ -41,27 +41,25 @@
   .lang-selector {
     display: flex;
     align-items: center;
-    gap: 4px;
   }
 
-  .lang-btn {
+  .lang-select {
     background: none;
     border: 1px solid rgba(255, 255, 255, 0.25);
-    color: rgba(255, 255, 255, 0.6);
+    color: $white;
     border-radius: 4px;
     font-size: 0.75rem;
     font-weight: 600;
     padding: 2px 8px;
     cursor: pointer;
-    transition: border-color 0.15s, color 0.15s;
 
-    &:hover {
+    option {
+      background: $black;
       color: $white;
-      border-color: rgba(255, 255, 255, 0.6);
     }
 
-    &.active {
-      color: $white;
+    &:focus {
+      outline: none;
       border-color: $primary;
     }
   }

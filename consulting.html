@@ -19,9 +19,11 @@
     <div class="consulting-topbar">
         <a href="/" class="topbar-back">← Bad Idea Interactive</a>
         <div class="lang-selector">
-            <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">🇬🇧 EN</button>
-            <button class="lang-btn" data-lang="es" onclick="setLanguage('es')">🇪🇸 ES</button>
-            <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">🇫🇷 FR</button>
+            <select class="lang-select" onchange="setLanguage(this.value)">
+                <option value="en">EN</option>
+                <option value="es">ES</option>
+                <option value="fr">FR</option>
+            </select>
         </div>
         <a href="#book" class="btn btn-primary" data-i18n="consulting.hero.cta1"></a>
     </div>

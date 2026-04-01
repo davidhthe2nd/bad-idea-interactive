@@ -117,6 +117,27 @@
   box-shadow: $shadow-soft;
 }
 
+.consulting-topbar .lang-select {
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: $black;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  cursor: pointer;
+
+  option {
+    background: $white;
+    color: $black;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+  }
+}
+
 .topbar-back {
   color: $black;
   font-weight: 600;
