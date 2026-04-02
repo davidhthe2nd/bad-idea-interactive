@@ -51,7 +51,7 @@
 
   "consulting.hero.eyebrow": "Freelance Consultant · Remote · Global",
   "consulting.hero.title": "Operational clarity for teams building across borders",
-  "consulting.hero.subtext": "I help game studios, tech companies and digital agencies set up the workflows, tools and localization pipelines they need to grow — with solutions adapted and scaled to your business.",
+  "consulting.hero.subtext": "I help studios, companies and agencies set up the workflows, tools and localization pipelines they need to grow — with solutions adapted and scaled to your business.",
   "consulting.hero.langs": "🌍 EN · ES · FR · PT",
   "consulting.hero.cta1": "Book a discovery call",
   "consulting.hero.cta2": "See my services",
@@ -63,7 +63,7 @@
   "consulting.hero.bring5": "📦 Fixed-scope engagements, concrete deliverables",
 
   "consulting.services.title": "What I do",
-  "consulting.services.lead": "Three focused services. Each starts with a free 30-minute discovery call.",
+  "consulting.services.lead": "Three focused services. Each starts with a free 15-minute discovery call.",
   "consulting.services.whatinpractice": "What could this mean in practice:",
   "consulting.services.loc.title": "Localization & Internationalization",
   "consulting.services.loc.desc": "Are you building a product that will cross borders? I help you set up the right foundations from day one — terminology, workflows, file formats, translation memory — so you scale globally without rewriting everything later.",
@@ -89,7 +89,7 @@
 
   "consulting.process.title": "How it works",
   "consulting.process.step1.title": "Discovery call",
-  "consulting.process.step1.desc": "30 minutes to understand your project, context and priorities. No commitment, no jargon. We figure out together if there's a fit.",
+  "consulting.process.step1.desc": "15 minutes to understand your project, context and priorities. No commitment, no jargon. We figure out together if there's a fit.",
   "consulting.process.step2.title": "Clear proposal",
   "consulting.process.step2.desc": "A scoped plan lands in your inbox within 48 hours — deliverables, timeline and fixed pricing. No surprises.",
   "consulting.process.step3.title": "Delivery & iteration",
@@ -128,7 +128,7 @@
   "consulting.work.case3.tag4": "RAG",
 
   "consulting.book.title": "Let's talk",
-  "consulting.book.desc": "30 minutes. No commitment. Tell me what you're working on and we'll see if I can help.",
+  "consulting.book.desc": "15 minutes. No commitment. Tell me what you're working on and we'll see if I can help.",
 
   "consulting.footer.name": "David Florez Herrero",
   "consulting.footer.tagline": "Freelance Consultant · Remote · Global",

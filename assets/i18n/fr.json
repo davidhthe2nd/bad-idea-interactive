@@ -51,7 +51,7 @@
 
   "consulting.hero.eyebrow": "Consultant Freelance · Remote · Global",
   "consulting.hero.title": "Clarté opérationnelle pour les équipes qui construisent sans frontières",
-  "consulting.hero.subtext": "J'aide les studios de jeux, les entreprises tech et les agences digitales à mettre en place les workflows, outils et pipelines de localisation dont ils ont besoin pour croître — avec des solutions adaptées et dimensionnées à leur activité.",
+  "consulting.hero.subtext": "J'aide les studios, les entreprises et les agences à mettre en place les workflows, outils et pipelines de localisation dont ils ont besoin pour croître — avec des solutions adaptées et dimensionnées à leur activité.",
   "consulting.hero.langs": "🌍 EN · ES · FR · PT",
   "consulting.hero.cta1": "Réserver un appel de découverte",
   "consulting.hero.cta2": "Voir mes services",
@@ -63,7 +63,7 @@
   "consulting.hero.bring5": "📦 Périmètres fixes, livrables concrets",
 
   "consulting.services.title": "Ce que je fais",
-  "consulting.services.lead": "Trois services ciblés. Chacun commence par un appel de découverte gratuit de 30 minutes.",
+  "consulting.services.lead": "Trois services ciblés. Chacun commence par un appel de découverte gratuit de 15 minutes.",
   "consulting.services.whatinpractice": "Ce que ça peut signifier concrètement :",
   "consulting.services.loc.title": "Localisation & Internationalisation",
   "consulting.services.loc.desc": "Vous construisez un produit qui franchira des frontières ? Je vous aide à poser les bonnes bases dès le premier jour — terminologie, workflows, formats de fichiers, mémoires de traduction — pour que vous puissiez vous déployer à l'international sans tout réécrire ensuite.",
@@ -89,7 +89,7 @@
 
   "consulting.process.title": "Comment ça marche",
   "consulting.process.step1.title": "Appel de découverte",
-  "consulting.process.step1.desc": "30 minutes pour comprendre votre projet, votre contexte et vos priorités. Sans engagement, sans jargon. On voit ensemble s'il y a un fit.",
+  "consulting.process.step1.desc": "15 minutes pour comprendre votre projet, votre contexte et vos priorités. Sans engagement, sans jargon. On voit ensemble s'il y a un fit.",
   "consulting.process.step2.title": "Proposition claire",
   "consulting.process.step2.desc": "Un plan cadré arrive dans votre boîte mail sous 48 heures — livrables, calendrier et prix fixe. Pas de surprises.",
   "consulting.process.step3.title": "Livraison & itération",
@@ -98,7 +98,7 @@
   "consulting.about.eyebrow": "À propos de moi",
   "consulting.about.title": "David Flórez Herrero",
   "consulting.about.p1": "Je suis consultant freelance et fondateur de Bad Idea Interactive, un studio indé basé en Europe.",
-  "consulting.about.p2": "Pendant plus de 15 ans j'ai géré la livraison mondiale chez Blizzard Entertainment — en pilotant la localisation des franchises Diablo et StarCraft dans 15 langues et avec 100+ contributeurs — puis je me suis orienté vers la transformation produit digital et Agile chez des entreprises comme Equinox, où j'ai contribué au lancement du jeu de cartes Altered sur Board Game Arena auprès de plus de 1,75 million de joueurs dans le monde.",
+  "consulting.about.p2": "Pendant plus de 15 ans j'ai géré la localisation chez Blizzard Entertainment — en pilotant la localisation des franchises Diablo et StarCraft dans 15 langues et avec 100+ contributeurs — puis je me suis orienté vers la transformation produit digital et Agile chez des entreprises comme Equinox, où j'ai contribué au lancement du jeu de cartes Altered sur Board Game Arena auprès de plus de 1,75 million de joueurs dans le monde.",
   "consulting.about.p3": "Aujourd'hui je travaille avec des studios de jeux, des entreprises SaaS et des agences digitales qui ont besoin d'un partenaire senior et pragmatique pour apporter structure, clarté et automatisation à leur façon de construire et de se déployer à l'international.",
   "consulting.about.p4": "Travail à distance. Basé en Europe, disponible globalement.",
   "consulting.about.linkedin": "Se connecter sur LinkedIn",
@@ -128,7 +128,7 @@
   "consulting.work.case3.tag4": "RAG",
 
   "consulting.book.title": "Parlons-en",
-  "consulting.book.desc": "30 minutes. Sans engagement. Dites-moi sur quoi vous travaillez et on verra si je peux vous aider.",
+  "consulting.book.desc": "15 minutes. Sans engagement. Dites-moi sur quoi vous travaillez et on verra si je peux vous aider.",
 
   "consulting.footer.name": "David Flórez Herrero",
   "consulting.footer.tagline": "Consultant Freelance · Remote · Global",
