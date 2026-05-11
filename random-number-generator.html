@@ -296,8 +296,10 @@
 
       const pairs = [];
       for (let i = 0; i < count; i++) {
-        pairs.push({ person: shuffledNames[i], reward: rewardList[i] }); // <-- reward order preserved
+        pairs.push({ person: shuffledNames[i], reward: rewardList[i] });
       }
+
+      pairs.sort((a, b) => uniqueNames.indexOf(a.person) - uniqueNames.indexOf(b.person));
 
       return { pairs, peopleCount: uniqueNames.length, rewardsCount: rewardList.length };
     }
