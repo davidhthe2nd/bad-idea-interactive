@@ -5,7 +5,10 @@
       "Bash(node-sass --version)",
       "Bash(where sass:*)",
       "Bash(where node:*)",
-      "Bash(npx sass:*)"
+      "Bash(npx sass:*)",
+      "Bash(Get-Content \"e:\\\\Otto_Games\\\\Bad_Idea_Website\\\\assets\\\\i18n\\\\es.json\")",
+      "Bash(Select-Object -Last 10)",
+      "Bash(Get-Content \"e:\\\\Otto_Games\\\\Bad_Idea_Website\\\\assets\\\\i18n\\\\fr.json\")"
     ]
   }
 }

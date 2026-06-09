@@ -138,5 +138,33 @@
   "consulting.footer.nav.book": "Réserver un appel",
   "consulting.footer.contact.title": "Contact",
   "consulting.footer.contact.desc": "Pour vos demandes de conseil :",
-  "consulting.footer.legal": "© 2025 David Flórez Herrero. Tous droits réservés."
+  "consulting.footer.legal": "© 2025 David Flórez Herrero. Tous droits réservés.",
+  "apps.locflow.title": "LocFlow", // TODO: translate
+  "apps.locflow.desc": "A localization pipeline that extracts content, formats it for any workflow — AI-assisted, human translation, or both — and handles vendor delivery and re-import. Adapts to how your team works.", // TODO: translate
+  "apps.locflow.tag1": "Localization", // TODO: translate
+  "apps.locflow.tag2": "Workflow Automation", // TODO: translate
+  "apps.locflow.tag3": "In development", // TODO: translate
+  "locflow.hero.eyebrow": "Studio Tools · Localization · Workflow Automation", // TODO: translate
+  "locflow.hero.title": "LocFlow — localization, your way.", // TODO: translate
+  "locflow.hero.subtext": "A pipeline that handles extraction, formatting, delivery and re-import — and plugs in AI translation, your own LLM, or a human vendor at whichever stage makes sense for your project.", // TODO: translate
+  "locflow.features.title": "What it does", // TODO: translate
+  "locflow.features.lead": "LocFlow manages the full localization lifecycle. AI translation is one option — not a requirement.", // TODO: translate
+  "locflow.features.li1": "Extract strings from source files (JSON, PO, XLIFF, and custom formats)", // TODO: translate
+  "locflow.features.li2": "Format and package content for vendor delivery or automated processing", // TODO: translate
+  "locflow.features.li3": "Optional AI translation via GPT, Claude, or a custom LLM of your choice", // TODO: translate
+  "locflow.features.li4": "QA flagging and glossary enforcement at any stage of the pipeline", // TODO: translate
+  "locflow.features.li5": "Re-import translated content back into your source system", // TODO: translate
+  "locflow.features.li6": "Configurable per project: fully automated, AI-assisted, or human-only", // TODO: translate
+  "locflow.process.title": "How it works", // TODO: translate
+  "locflow.process.step1.title": "Extract & format", // TODO: translate
+  "locflow.process.step1.desc": "Source content is parsed, cleaned and packaged into the target format for your workflow.", // TODO: translate
+  "locflow.process.step2.title": "Route & translate", // TODO: translate
+  "locflow.process.step2.desc": "Content is routed to an AI model, an external vendor, or both — based on your project configuration.", // TODO: translate
+  "locflow.process.step3.title": "Deliver & re-import", // TODO: translate
+  "locflow.process.step3.desc": "Translated files are delivered in the correct format and re-imported into the source system.", // TODO: translate
+  "locflow.stack.title": "Built to be swappable", // TODO: translate
+  "locflow.stack.desc": "Python-based pipeline with GPT and Claude API support out of the box. The model layer is configurable — point it at your own LLM endpoint or bypass AI entirely and route straight to your translation vendor. No lock-in at any stage.", // TODO: translate
+  "locflow.cta.title": "Need a localization pipeline that fits how your team works?", // TODO: translate
+  "locflow.cta.desc": "LocFlow is in active development. If you're interested in an early version or a custom setup, let's talk.", // TODO: translate
+  "locflow.cta.btn": "Book a discovery call" // TODO: translate
 }
