@@ -300,6 +300,7 @@
       }
 
       pairs.sort((a, b) => rewardList.indexOf(a.reward) - rewardList.indexOf(b.reward));
+      console.log(pairs);
 
       return { pairs, peopleCount: uniqueNames.length, rewardsCount: rewardList.length };
     }
