@@ -252,7 +252,7 @@
 
     function parseList(text) {
     return text
-      .split(/\r?\n|,|;/g)
+      .split(/\r?\n/g)
       .map(s => s.trim())
       .filter(Boolean);
   }
@@ -299,7 +299,7 @@
         pairs.push({ person: shuffledNames[i], reward: rewardList[i] });
       }
 
-      pairs.sort((a, b) => uniqueNames.indexOf(a.person) - uniqueNames.indexOf(b.person));
+      pairs.sort((a, b) => rewardList.indexOf(a.reward) - rewardList.indexOf(b.reward));
 
       return { pairs, peopleCount: uniqueNames.length, rewardsCount: rewardList.length };
     }
