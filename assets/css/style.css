@@ -414,6 +414,10 @@ body.scrolled .navbar.sticky-top {
   color: rgba(255, 255, 255, 0.75);
 }
 
+.consulting-hero .about-title {
+  color: #0B0B0B;
+}
+
 .consulting-hero .about-list li {
   color: #0B0B0B;
 }
