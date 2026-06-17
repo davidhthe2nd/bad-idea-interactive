@@ -153,7 +153,7 @@
   "locflow.features.li2": "Formatea y empaqueta el contenido para la entrega a proveedores o el procesamiento automatizado",
   "locflow.features.li3": "Traducción con IA opcional mediante GPT, Claude o el LLM que elijas",
   "locflow.features.li4": "Controles de calidad y aplicación del glosario en cualquier etapa del pipeline",
-  "locflow.features.li5": "Reimporta el contenido traducido de vuelta a tu sistema fuente",
+  "locflow.features.li5": "Reimporta el contenido traducido de vuelta a tu sistema de origen, en el formato correcto",
   "locflow.features.li6": "Configurable por proyecto: totalmente automatizado, asistido por IA o solo humano",
   "locflow.process.title": "Cómo funciona",
   "locflow.process.step1.title": "Extracción y formateo",
