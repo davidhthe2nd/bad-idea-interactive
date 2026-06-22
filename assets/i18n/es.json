@@ -48,7 +48,6 @@
   "footer.explore": "Explorar",
   "footer.contact": "Contacto",
   "footer.contact.desc": "Para colaboraciones, consultoría o ponencias:",
-
   "consulting.hero.eyebrow": "Consultor Freelance · Remoto · Global",
   "consulting.hero.title": "Claridad operacional para equipos que construyen sin fronteras",
   "consulting.hero.subtext": "Ayudo a estudios, empresas y agencias a poner en marcha los workflows, las herramientas y los pipelines de localización que necesitan para crecer, con soluciones adaptadas y escaladas a su negocio.",
@@ -61,7 +60,6 @@
   "consulting.hero.bring3": "⚙️ Experiencia en métodologías Agile, waterfall, localización e integración de IA",
   "consulting.hero.bring4": "🤝 Un único punto de contacto, de la auditoría a la implementación",
   "consulting.hero.bring5": "📦 Alcances fijos, entregables concretos",
-
   "consulting.services.title": "Lo que hago",
   "consulting.services.lead": "Tres servicios focalizados. Cada uno empieza con una llamada de introducción gratuita de 15 minutos.",
   "consulting.services.whatinpractice": "¿Qué podría significar esto en la práctica?",
@@ -86,7 +84,6 @@
   "consulting.services.ai.li3": "Configuración de agentes de IA (investigación, resúmenes, generación de backlog)",
   "consulting.services.ai.li4": "Sistemas de conocimiento basados en RAG para equipos internos",
   "consulting.services.ai.timeline": "Duración típica: 1–4 semanas",
-
   "consulting.process.title": "Cómo funciona",
   "consulting.process.step1.title": "Llamada de introducción",
   "consulting.process.step1.desc": "15 minutos para entender tu proyecto, contexto y prioridades. Sin compromisos, sin tecnicismos. Valoramos juntos si encajamos.",
@@ -94,7 +91,6 @@
   "consulting.process.step2.desc": "En menos de 48 horas recibirás un plan definido: entregables, plazos y precio fijo. Sin sorpresas.",
   "consulting.process.step3.title": "Entrega e iteración",
   "consulting.process.step3.desc": "Trabajamos en ciclos cortos con revisiones regulares. Ves el progreso desde el principio y puedes ajustar el rumbo antes de que nada quede fijado.",
-
   "consulting.about.eyebrow": "Sobre mí",
   "consulting.about.title": "David Flórez Herrero",
   "consulting.about.p1": "Soy consultor freelance y fundador de Bad Idea Interactive, un estudio indie en Europa.",
@@ -102,7 +98,6 @@
   "consulting.about.p3": "Hoy trabajo con estudios de videojuegos, empresas SaaS y agencias digitales que necesitan un socio senior y pragmático para aportar estructura, claridad y automatización a cómo construyen y escalan a nivel internacional.",
   "consulting.about.p4": "Trabajo en remoto. Con base en Europa, disponible globalmente.",
   "consulting.about.linkedin": "Conectar en LinkedIn",
-
   "consulting.work.title": "Proyectos realizados",
   "consulting.work.lead": "Una selección de proyectos reales. Más detalle disponible bajo petición.",
   "consulting.work.case1.tag": "Videojuegos / Producto Digital",
@@ -126,10 +121,8 @@
   "consulting.work.case3.tag2": "Agentes",
   "consulting.work.case3.tag3": "Automatización",
   "consulting.work.case3.tag4": "RAG",
-
   "consulting.book.title": "Hablemos",
   "consulting.book.desc": "15 minutos. Sin compromisos. Cuéntame en qué estás trabajando y vemos si puedo ayudarte.",
-
   "consulting.footer.name": "David Flórez Herrero",
   "consulting.footer.tagline": "Consultor Freelance · Remoto · Global",
   "consulting.footer.nav.services": "Servicios",
@@ -138,7 +131,7 @@
   "consulting.footer.nav.book": "Reservar una llamada",
   "consulting.footer.contact.title": "Contacto",
   "consulting.footer.contact.desc": "Para consultas de consultoría:",
-  "consulting.footer.legal": "© 2025 David Flórez Herrero. Todos los derechos reservados.",
+  "consulting.footer.legal": "© 2026 David Florez Herrero. Todos los derechos reservados.",
   "apps.locflow.title": "LocFlow",
   "apps.locflow.desc": "Un pipeline de localización que extrae contenido, lo formatea para cualquier flujo de trabajo — con asistencia de IA, traducción humana, o ambas — y gestiona la entrega a proveedores y la reimportación. Se adapta a cómo trabaja tu equipo.",
   "apps.locflow.tag1": "Localización",
