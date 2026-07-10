@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Web design, SEO and ongoing online presence for indie studios and small businesses. Remote, global." />
+  <title>David Flórez Herrero — Web & Online Presence | Bad Idea Interactive</title>
+
+  <!-- 1) Bootstrap first -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- 2) YOUR CSS last -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+    <div class="consulting-topbar">
+        <a href="/" class="topbar-back">← Bad Idea <span class="back-line2">Interactive</span></a>
+        <div class="lang-selector">
+            <select class="lang-select" onchange="setLanguage(this.value)">
+                <option value="en">EN</option>
+                <option value="es">ES</option>
+                <option value="fr">FR</option>
+            </select>
+        </div>
+        <a href="#book" class="btn btn-primary topbar-cta" data-i18n="web.hero.cta1">
+            <span class="cta-full">Book a discovery call</span>
+            <span class="cta-short">Book call</span>
+        </a>
+    </div>
+
+    <section id="hero" class="section consulting-hero">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="hero-eyebrow" data-i18n="web.hero.eyebrow">Web & Online Presence · Remote · Global</span>
+                    <h1 class="hero-title" data-i18n="web.hero.title">A website that launches once and is never touched again isn't a presence — it's a placeholder.</h1>
+                    <p data-i18n="web.hero.subtext">I build and maintain the site, SEO and social presence that keeps studios and small businesses visible — not just online.</p>
+                    <p class="consulting-langs" data-i18n="web.hero.langs">🌍 Available in EN · ES · FR · PT</p>
+                    <div class="hero-ctas">
+                        <a href="#book" class="btn btn-primary me-3" data-i18n="web.hero.cta1">Book a discovery call</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="about-highlight">
+                        <h3 class="about-title" data-i18n="web.hero.whatsincluded">What this covers</h3>
+                        <ul class="about-list">
+                            <li data-i18n="web.hero.item1">🖥️ Website design and build</li>
+                            <li data-i18n="web.hero.item2">🔍 SEO setup and ongoing optimization</li>
+                            <li data-i18n="web.hero.item3">📱 Social presence and content cadence</li>
+                            <li data-i18n="web.hero.item4">🔧 Maintenance and updates over time</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book" class="section dark">
+        <div class="container text-center">
+            <h2 class="section-title" data-i18n="web.book.title">Let's talk</h2>
+            <p data-i18n="web.book.desc">15 minutes. No commitment. Tell me what you're working on and we'll see if I can help.</p>
+            <div class="calendly-embed">
+                <div class="calendly-inline-widget"
+                     data-url="https://calendly.com/david-badideainteractive/new-meeting"
+                     style="min-width:320px;height:700px;">
+                </div>
+            </div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-4 align-items-start">
+                <!-- Column 1: Personal brand -->
+                <div class="col-md-4">
+                    <h4 class="footer-heading" data-i18n="web.footer.name">David Flórez Herrero</h4>
+                    <p class="footer-text" data-i18n="web.footer.tagline">Web & Online Presence · Remote · Global</p>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <div class="col-md-4">
+                    <h4 class="footer-heading">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hero" data-i18n="web.footer.nav.overview">Overview</a></li>
+                        <li><a href="#book" data-i18n="web.footer.nav.book">Book a call</a></li>
+                        <li><a href="/consulting" data-i18n="web.footer.nav.consulting">Studio consulting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact -->
+                <div class="col-md-4">
+                    <h4 class="footer-heading" data-i18n="web.footer.contact.title">Contact</h4>
+                    <p class="footer-text" data-i18n="web.footer.contact.desc">For web & presence enquiries:</p>
+                    <p class="footer-text">
+                        <a href="mailto:hello@badideainteractive.com">hello@badideainteractive.com</a>
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/david-florez-herrero-50b95b98/" aria-label="LinkedIn">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-legal">
+                    &copy; <span id="year"></span> David Florez Herrero. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+                document.body.classList.add("scrolled");
+            } else {
+                document.body.classList.remove("scrolled");
+            }
+        });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/i18n.js"></script>
+</body>
+</html>
