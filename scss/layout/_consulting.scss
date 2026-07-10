@@ -117,6 +117,25 @@
   box-shadow: $shadow-soft;
 }
 
+.consulting-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: $white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: $spacing-2 $spacing-3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $shadow-soft;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+}
+
 .consulting-topbar .lang-select {
   background: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -146,5 +165,28 @@
 
   &:hover {
     color: $primary;
+  }
+}
+
+.topbar-cta {
+  white-space: nowrap;
+
+  .cta-short { display: none; }
+}
+
+@media (max-width: 576px) {
+  .consulting-topbar {
+    padding: $spacing-1 $spacing-2;
+  }
+
+  .topbar-back .back-text { display: none; }
+  .topbar-back .back-arrow { font-size: 1.4rem; }
+
+  .topbar-cta {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+
+    .cta-full { display: none; }
+    .cta-short { display: inline; }
   }
 }
