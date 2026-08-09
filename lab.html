@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Placeholder meta description — see /docs/lab-copy.md and /docs/site-architecture.md." />
+  <title>Lab — Bad Idea Interactive</title>
+
+  <!-- 1) Bootstrap first -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- 2) YOUR CSS last -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Main navigation">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="assets/img/logo_name.png"
+                alt="Bad Idea Interactive"
+                height="45"
+                class="me-2">
+            </a>
+
+            <button class="navbar-toggler collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarsExample09"
+                    aria-controls="navbarsExample09"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse" id="navbarsExample09">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link" href="/" data-i18n="nav.home">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/lab" data-i18n="nav.lab">Lab</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/consulting" data-i18n="nav.consulting">Consulting</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/web" data-i18n="nav.web">Web</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/notes" data-i18n="nav.notes">Notes</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/contact" data-i18n="nav.contact">Contact</a>
+                </li>
+                <li class="nav-item lang-selector ms-lg-3">
+                    <select class="lang-select" onchange="setLanguage(this.value)">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                    </select>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Intro -->
+    <section id="intro" class="section hero">
+        <div class="container">
+            <h1 class="hero-title" data-i18n="lab.intro.title">Lab</h1>
+            <p class="section-lead" data-i18n="lab.intro.p1">Public R&D. Between client projects I build things to answer questions I can't answer by reading about them — how a mechanic feels, whether a pipeline holds, what breaks when real users show up.</p>
+            <p data-i18n="lab.intro.p2">Some of it shipped. Some is still moving. Some is here because it didn't work, and that turned out to be the useful part.</p>
+        </div>
+    </section>
+
+    <!-- Shipped -->
+    <section id="shipped" class="section light">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="section-title" data-i18n="lab.shipped.title">Shipped</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card entry-card h-100">
+                        <div class="entry-card-media">
+                            <img src="assets/img/abel-saves-christmas.png" alt="">
+                            <span class="entry-status-badge" data-i18n="lab.shipped.mayor.status">Shipped · 2025 · updating 2026</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title" data-i18n="lab.shipped.mayor.title">Mayor Saves Christmas</h3>
+                            <p class="entry-hook" data-i18n="lab.shipped.mayor.hook">An arcade platformer set in Vigo. Trap enemies, chain combos, save the city's Christmas lights.</p>
+                            <p class="entry-tech" data-i18n="lab.shipped.mayor.tech">Unity · C#</p>
+                            <p class="entry-field">
+                                <span class="entry-field-label" data-i18n="lab.card.question_label">The question:</span>
+                                <span data-i18n="lab.shipped.mayor.question">Could a small game be tied to a real-world event — Vigo's lights actually switching on — and would that synchronization earn anything a normal release wouldn't?</span>
+                            </p>
+                            <p class="entry-field">
+                                <span class="entry-field-label" data-i18n="lab.card.findings_label">Findings:</span>
+                                <span data-i18n="lab.shipped.mayor.findings">The real lesson was structural. I built and tested one solid gameplay loop first, then added worlds one at a time, each layered on without breaking what came before. Because the scope stayed small and every layer was additive, the game was releasable at any point — so the fixed real-world deadline stopped being a risk. Tying the launch to the actual event gave it a window and a reason for local players to care, but that only worked because the build was never in a half-finished state waiting on the next feature.</span>
+                            </p>
+                            <a href="https://davidhthe1st.itch.io/mayor-saves-christmas" class="btn btn-primary w-100 mt-3" target="_blank" rel="noopener" data-i18n="lab.shipped.mayor.link">Play on itch.io →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card entry-card h-100">
+                        <div class="entry-card-media">
+                            <img src="assets/img/escape_from_hell.png" alt="">
+                            <span class="entry-status-badge" data-i18n="lab.shipped.escape.status">Shipped · 2024</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title" data-i18n="lab.shipped.escape.title">Escape From Hell</h3>
+                            <p class="entry-hook" data-i18n="lab.shipped.escape.hook">A score-chasing arena runner about tight movement and one-more-run pressure.</p>
+                            <p class="entry-tech" data-i18n="lab.shipped.escape.tech">Unity · C# · Android</p>
+                            <p class="entry-field">
+                                <span class="entry-field-label" data-i18n="lab.card.question_label">The question:</span>
+                                <span data-i18n="lab.shipped.escape.question">What's the real distance between a prototype that feels good on my machine and something that ships to a store?</span>
+                            </p>
+                            <p class="entry-field">
+                                <span class="entry-field-label" data-i18n="lab.card.findings_label">Findings:</span>
+                                <span data-i18n="lab.shipped.escape.findings">Most of it was performance on mid-range Android and the Play Console work nobody warns you about — store submission is a project of its own, not a final step. Playtesting was the other half: it validated the core idea early, then did the work I couldn't do alone on UX and balance. I'd budget for both from the start now rather than discovering them at the end.</span>
+                            </p>
+                            <a href="https://davidhthe1st.itch.io/escape-from-hell" class="btn btn-primary w-100 mt-3" target="_blank" rel="noopener" data-i18n="lab.shipped.escape.link">Play on itch.io →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- In development -->
+    <section id="in-development" class="section">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="section-title" data-i18n="lab.indevelopment.title">In development</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card entry-card h-100">
+                        <div class="entry-card-media">
+                            <img src="assets/img/mandarin_app_2.png" alt="">
+                            <span class="entry-status-badge" data-i18n="lab.indevelopment.mandarin.status">Active · since 2026</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title" data-i18n="lab.indevelopment.mandarin.title">Mandarin Daily</h3>
+                            <p class="entry-hook" data-i18n="lab.indevelopment.mandarin.hook">A flashcard app for Mandarin learners — HSK vocabulary, example sentences, spaced repetition, short daily sessions.</p>
+                            <p class="entry-tech" data-i18n="lab.indevelopment.mandarin.tech">Kotlin · Android</p>
+                            <p class="entry-field">
+                                <span class="entry-field-label" data-i18n="lab.card.question_label">The question:</span>
+                                <span data-i18n="lab.indevelopment.mandarin.question">Spaced repetition tools optimise for retention and ignore whether anyone opens them on day nine. Can progression and customization do the work motivation usually has to?</span>
+                            </p>
+                            <p class="entry-field">
+                                <span class="entry-field-label" data-i18n="lab.card.findings_so_far_label">Findings so far:</span>
+                                <span data-i18n="lab.indevelopment.mandarin.findings">Progression matters more than the algorithm, and letting learners shape their own path matters nearly as much. Accessibility turned out to be structural rather than a nice-to-have — pinyin toggles, traditional and simplified — because without it whole groups of learners simply can't use the thing. The AI features (scanning documents into your own flashcards, reviewing homework) work, but the real lesson was cost: a feature that's cheap in testing is a different product at scale, and optimising for that changed what was worth building at all.</span>
+                            </p>
+                            <p class="entry-no-link" data-i18n="lab.indevelopment.mandarin.link">Not public yet</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card entry-card h-100">
+                        <div class="entry-card-media">
+                            <img src="assets/img/work-in-progress.jpg" alt="">
+                            <span class="entry-status-badge" data-i18n="lab.indevelopment.coil.status">Active · since 2026</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title" data-i18n="lab.indevelopment.coil.title">Coil</h3>
+                            <p class="entry-hook" data-i18n="lab.indevelopment.coil.hook">A tracker for reptile keepers — collections, feeding schedules, shedding, health records.</p>
+                            <p class="entry-tech" data-i18n="lab.indevelopment.coil.tech">Kotlin · Android</p>
+                            <p class="entry-field">
+                                <span class="entry-field-label" data-i18n="lab.card.question_label">The question:</span>
+                                <span data-i18n="lab.indevelopment.coil.question">Keepers already track this in notebooks and spreadsheets. Does an app actually beat the notebook, or just move the problem?</span>
+                            </p>
+                            <p class="entry-field">
+                                <span class="entry-field-label" data-i18n="lab.card.findings_so_far_label">Findings so far:</span>
+                                <span data-i18n="lab.indevelopment.coil.findings">Building against an existing need is far easier than manufacturing one — but only if you check the design against how people actually record things, not how you'd organise it yourself. Current work is accounts and cross-platform sync, since a collection that lives on one phone is a notebook with extra steps.</span>
+                            </p>
+                            <p class="entry-no-link" data-i18n="lab.indevelopment.coil.link">Not public yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiments -->
+    <section id="experiments" class="section light">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="section-title" data-i18n="lab.experiments.title">Experiments</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card entry-card h-100">
+                        <div class="entry-card-media">
+                            <img src="assets/img/work-in-progress.jpg" alt="">
+                            <span class="entry-status-badge" data-i18n="lab.experiments.bullethell.status">Prototype · since 2026</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title" data-i18n="lab.experiments.bullethell.title">[Name pending] — bullet-hell prototype</h3>
+                            <p class="entry-hook" data-i18n="lab.experiments.bullethell.hook">A pure prototype, deliberately unscoped beyond the core.</p>
+                            <p class="entry-tech" data-i18n="lab.experiments.bullethell.tech">Unity · C#</p>
+                            <p class="entry-field">
+                                <span class="entry-field-label" data-i18n="lab.card.question_label">The question:</span>
+                                <span data-i18n="lab.experiments.bullethell.question">How much of a game's systems can I hand to AI before the design stops being mine? Implementation is AI-assisted; every big-picture design decision stays with me. Where that line actually falls is the experiment.</span>
+                            </p>
+                            <p class="entry-field">
+                                <span class="entry-field-label" data-i18n="lab.card.findings_label">Findings:</span>
+                                <span data-i18n="lab.experiments.bullethell.findings">[TO WRITE — in progress. Even a partial answer is worth having. Most current-feeling entry on the page and the one a consulting reader is most likely to stop on.]</span>
+                            </p>
+                            <p class="entry-no-link" data-i18n="lab.experiments.bullethell.link">Not public</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shelved -->
+    <section id="shelved" class="section dark">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="section-title" data-i18n="lab.shelved.title">Shelved</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card entry-card h-100">
+                        <div class="entry-card-media">
+                            <img src="assets/img/work-in-progress.jpg" alt="">
+                            <span class="entry-status-badge" data-i18n="lab.shelved.noescape.status">Shelved · 2025</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title" data-i18n="lab.shelved.noescape.title">There Is No Escape</h3>
+                            <p class="entry-hook" data-i18n="lab.shelved.noescape.hook">A grid-based game built in the world of Escape From Hell.</p>
+                            <p class="entry-tech" data-i18n="lab.shelved.noescape.tech">Unity · C#</p>
+                            <p class="entry-field">
+                                <span class="entry-field-label" data-i18n="lab.card.question_label">The question:</span>
+                                <span data-i18n="lab.shelved.noescape.question">Could an existing prototype's world carry a completely different genre, and does reusing your own IP actually save anything?</span>
+                            </p>
+                            <div class="entry-field" data-i18n-html="lab.shelved.noescape.findings"><p><strong>Why it stopped:</strong> The core was fun, but growing it meant going well past the scope I'd set — and that expansion served neither a learning goal nor a market one. Fun on its own wasn't a good enough reason to keep going.</p><p><strong>What it taught me:</strong> Time-boxing this kind of project is the whole discipline, and the basics have to be fun before anything gets built on top of them. Also that "I'm enjoying this" and "this is worth continuing" are different questions, and it's worth asking the second one out loud.</p></div>
+                            <p class="entry-no-link" data-i18n="lab.card.no_link">No link yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing — the single link to /consulting -->
+    <section id="closing" class="section">
+        <div class="container text-center">
+            <p data-i18n="lab.closing.text">This is how I work: scope it small, ship it, find out what the assumption got wrong. It's the same approach I bring into studios.</p>
+            <a href="/consulting" class="btn btn-primary" data-i18n="lab.closing.cta">Work with me →</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-4 align-items-start">
+                <div class="col-md-4">
+                    <div class="footer-brand d-flex align-items-center mb-2">
+                        <img src="assets/img/logo_name.png" alt="Bad Idea Interactive" height="45" class="me-2">
+                    </div>
+                    <p class="footer-text" data-i18n="lab.footer.tagline">Placeholder — footer tagline</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h4 class="footer-heading" data-i18n="footer.explore">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="/" data-i18n="nav.home">Home</a></li>
+                        <li><a href="/lab" data-i18n="nav.lab">Lab</a></li>
+                        <li><a href="/consulting" data-i18n="nav.consulting">Consulting</a></li>
+                        <li><a href="/web" data-i18n="nav.web">Web</a></li>
+                        <li><a href="/notes" data-i18n="nav.notes">Notes</a></li>
+                        <li><a href="/contact" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h4 class="footer-heading" data-i18n="footer.contact">Contact</h4>
+                    <p class="footer-text" data-i18n="footer.contact.desc">For collaborations, consulting or speaking:</p>
+                    <p class="footer-text">
+                        <a href="mailto:hello@badideainteractive.com">hello@badideainteractive.com</a>
+                    </p>
+                    <div class="footer-socials">
+                        <a href="http://linkedin.com/company/bad-idea-interactive" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="https://www.instagram.com/badideaint/" aria-label="Instagram">Instagram</a>
+                        <a href="https://davidhthe1st.itch.io/" aria-label="Itch.io">Itch.io</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-legal">
+                    © <span id="year"></span> Bad Idea Interactive. All rights reserved. All trademarks and property of their respective owners.
+                    This website and the projects showcased are original works by Bad Idea Interactive and are not affiliated with any
+                    other companies, brands, or public institutions.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+                document.body.classList.add("scrolled");
+            } else {
+                document.body.classList.remove("scrolled");
+            }
+        });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/i18n.js"></script>
+</body>
+</html>

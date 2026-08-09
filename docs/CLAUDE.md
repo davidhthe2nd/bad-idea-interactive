@@ -10,7 +10,8 @@ Reference docs live in `/docs`. Read `site-architecture.md` before any structura
 
 - **Work only within the scope of the current task.** Do not refactor, restyle, or rewrite copy on pages the task did not name.
 - **Ask before introducing a dependency, build step, or framework.** This site is intentionally plain.
-- Edit SCSS sources, never the compiled `assets/css/style.css`.
+- Edit SCSS sources, never the compiled `assets/css/style.css`. **SCSS must be recompiled locally before committing** — `assets/css/style.css` is generated, never hand-edited.
+- **Clean URLs resolve natively on GitHub Pages.** `/consulting` serves `consulting.html` with no rewrite config or build step needed for routing.
 
 ---
 

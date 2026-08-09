@@ -1,0 +1,58 @@
+// Shared six-field card component — used by /lab entries and the
+// homepage featured strip (see /docs/site-architecture.md "Shared components").
+// Base white fill / radius / shadow / hover lift come from .card in _cards.scss.
+.entry-card {
+  .entry-card-media {
+    position: relative;
+
+    img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .entry-status-badge {
+    position: absolute;
+    top: $spacing-2;
+    right: $spacing-2;
+    background: $black;
+    color: $white;
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .entry-hook {
+    color: $mid-grey;
+    font-size: 0.95rem;
+    margin-bottom: $spacing-2;
+  }
+
+  .entry-tech {
+    font-size: 0.8rem;
+    color: $mid-grey;
+    font-weight: 600;
+    margin-bottom: $spacing-2;
+  }
+
+  .entry-field {
+    font-size: 0.9rem;
+    margin-bottom: $spacing-1;
+  }
+
+  .entry-field-label {
+    font-weight: 700;
+    margin-right: 4px;
+  }
+
+  .entry-no-link {
+    color: $mid-grey;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: $spacing-2;
+    margin-bottom: 0;
+  }
+}
