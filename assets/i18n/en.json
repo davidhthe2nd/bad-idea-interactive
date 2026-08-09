@@ -23,6 +23,7 @@
   "home.halves.consulting.body": "Localization, production, and automation for indie and mid-size studios past the prototype stage. Fifteen years of shipping across 15 languages and 100+ contributors, applied to your pipeline.",
   "home.halves.consulting.cta": "What I do",
 
+  "home.featured.section_title": "Recent work",
   "home.featured.mayor.title": "Mayor Saves Christmas",
   "home.featured.mayor.status": "Shipped · 2025",
   "home.featured.mayor.body": "An arcade platformer set in Vigo. Built loop-first, released to a real-world deadline, updating this year.",
@@ -38,7 +39,9 @@
   "home.about.pepper.body": "Chief Morale Officer. Attends every meeting. Has never once been asked to leave.",
 
   "home.method.section_title": "How I work",
-  "home.method.para_1": "Scope small enough to finish. Test the core before building on it. Write down what happened, including when it didn't work.",
+  "home.method.principle_1": "Scope small enough to finish.",
+  "home.method.principle_2": "Test the core before building on it.",
+  "home.method.principle_3": "Write down what happened, including when it didn't work.",
   "home.method.para_2": "Pointing out what's broken is only half a job. The other half is pointing at what works instead.",
 
   "home.notes.section_title": "Notes",

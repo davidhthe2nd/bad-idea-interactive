@@ -55,4 +55,30 @@
     margin-top: $spacing-2;
     margin-bottom: 0;
   }
+
+  // Horizontal modifier — media ~40% left at 16:9, six fields stacked right.
+  // Same component, same fields; only the arrangement changes.
+  &.entry-card--wide {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+    .entry-card-media {
+      flex: 0 0 40%;
+      max-width: 40%;
+    }
+
+    .card-body {
+      flex: 1 1 auto;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+
+      .entry-card-media {
+        flex: 1 1 auto;
+        max-width: 100%;
+      }
+    }
+  }
 }
