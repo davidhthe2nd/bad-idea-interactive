@@ -98,5 +98,30 @@
   margin-bottom: 10px;
 }
 
+// Quick-nav pills — jumps to in-page sections (e.g. /lab status groups)
+.section-nav-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: $spacing-2;
+
+  a {
+    display: inline-block;
+    background: $light;
+    color: $black;
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+
+    &:hover {
+      background: $primary;
+      color: $white;
+    }
+  }
+}
+
 
 

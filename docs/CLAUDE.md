@@ -61,7 +61,9 @@ Shadows — resting `0 2px 6px rgba(0,0,0,.09)`, hover `0 4px 12px rgba(0,0,0,.1
 
 Motion — card lift `translateY(-4px)` + shadow on hover (0.2s), sticky-nav shadow after 10px scroll (0.25s). Nothing else. No entrance animations or parallax.
 
-Layout — ~1140px centered container, 16px gutters. Sticky black nav on main site; sticky white topbar on consulting sub-pages.
+Layout — ~1140px centered container, 16px gutters. Sticky black nav site-wide.
+
+Hero backgrounds — dark heroes (black background, white headline, red accents) on `/` and `/consulting`. Light on all other pages.
 
 ---
 

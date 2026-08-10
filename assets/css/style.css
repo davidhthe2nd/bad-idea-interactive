@@ -371,6 +371,28 @@ body.scrolled .navbar.sticky-top {
   margin-bottom: 10px;
 }
 
+.section-nav-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.section-nav-pills a {
+  display: inline-block;
+  background: #F4F4F4;
+  color: #0B0B0B;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.section-nav-pills a:hover {
+  background: #D62828;
+  color: #FFFFFF;
+}
+
 .section.hero {
   min-height: 90vh;
   background: #FFFFFF;
