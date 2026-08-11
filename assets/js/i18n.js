@@ -85,6 +85,12 @@
         document.querySelectorAll('.lang-select').forEach(function (sel) {
           sel.value = lang;
         });
+
+        // data-i18n-html replaces innerHTML wholesale, which would wipe out
+        // #year (normally set once by each page's own inline script) if the
+        // footer legal line is bound that way. Re-stamp it after every apply.
+        var yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
       })
       .catch(function (err) {
         console.error(err);

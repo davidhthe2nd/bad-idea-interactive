@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Freelance games studio consultant specialising in localization production, PM & workflow consulting, and AI automation. 15+ years experience. Remote, global." />
-  <title>David Flórez Herrero — Games Studio Consultant | Localization, PM & Automation</title>
+  <meta name="description" data-i18n-attr="content:consulting.meta.description" content="Freelance games studio consultant specialising in localization production, PM & workflow consulting, and AI automation. 15+ years experience. Remote, global." />
+  <title data-i18n="consulting.meta.title">David Flórez Herrero — Games Studio Consultant | Localization, PM & Automation</title>
   <meta property="og:image" content="https://badideainteractive.com/assets/img/og/consulting.jpg" />
   <meta name="twitter:image" content="https://badideainteractive.com/assets/img/og/consulting.jpg" />
 
@@ -293,40 +293,44 @@
     <footer class="footer">
         <div class="container">
             <div class="row gy-4 align-items-start">
-                <!-- Column 1: Personal brand -->
+                <!-- Column 1: Logo + tagline -->
                 <div class="col-md-4">
-                    <h4 class="footer-heading" data-i18n="consulting.footer.name">David Flórez Herrero</h4>
-                    <p class="footer-text" data-i18n="consulting.footer.tagline">Games Studio Consultant · Remote · Global</p>
+                    <div class="footer-brand d-flex align-items-center mb-2">
+                        <img src="assets/img/logo_name.png" alt="Bad Idea Interactive" height="45" class="me-2">
+                    </div>
+                    <p class="footer-text" data-i18n="footer.tagline">Indie studio turning "bad ideas" into focused arcade games, learning tools and playful experiments.</p>
                 </div>
 
-                <!-- Column 2: Navigation -->
+                <!-- Column 2: Navigation links -->
                 <div class="col-md-4">
-                    <h4 class="footer-heading">Navigation</h4>
+                    <h4 class="footer-heading" data-i18n="footer.explore">Explore</h4>
                     <ul class="footer-links">
-                        <li><a href="#services" data-i18n="consulting.footer.nav.services">Services</a></li>
-                        <li><a href="#process" data-i18n="consulting.footer.nav.process">How it works</a></li>
-                        <li><a href="#work" data-i18n="consulting.footer.nav.work">Past work</a></li>
-                        <li><a href="#book" data-i18n="consulting.footer.nav.book">Book a call</a></li>
+                        <li><a href="/" data-i18n="nav.home">Home</a></li>
+                        <li><a href="/lab" data-i18n="nav.lab">Lab</a></li>
+                        <li><a href="/consulting" data-i18n="nav.consulting">Consulting</a></li>
+                        <li><a href="/web" data-i18n="nav.web">Web</a></li>
+                        <li><a href="/notes" data-i18n="nav.notes">Notes</a></li>
+                        <li><a href="/contact" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3: Contact -->
+                <!-- Column 3: Contact + socials -->
                 <div class="col-md-4">
-                    <h4 class="footer-heading" data-i18n="consulting.footer.contact.title">Contact</h4>
-                    <p class="footer-text" data-i18n="consulting.footer.contact.desc">For consulting enquiries:</p>
+                    <h4 class="footer-heading" data-i18n="footer.contact">Contact</h4>
+                    <p class="footer-text" data-i18n="footer.contact.desc">For collaborations, consulting or speaking:</p>
                     <p class="footer-text">
                         <a href="mailto:hello@badideainteractive.com">hello@badideainteractive.com</a>
                     </p>
                     <div class="footer-socials">
-                        <a href="https://www.linkedin.com/in/david-florez-herrero-50b95b98/" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="http://linkedin.com/company/bad-idea-interactive" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="https://www.instagram.com/badideaint/" aria-label="Instagram">Instagram</a>
+                        <a href="https://davidhthe1st.itch.io/" aria-label="Itch.io">Itch.io</a>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p class="footer-legal">
-                    &copy; <span id="year"></span> David Florez Herrero. All rights reserved.
-                </p>
+                <p class="footer-legal" data-i18n-html="footer.legal">© <span id="year"></span> Bad Idea Interactive. All rights reserved. All trademarks and property of their respective owners. This website and the projects showcased are original works by Bad Idea Interactive and are not affiliated with any other companies, brands, or public institutions.</p>
             </div>
         </div>
     </footer>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reward Lottery | Bad Idea Interactive</title>
+  <title data-i18n="reward.meta.title">Reward Lottery | Bad Idea Interactive</title>
 
   <!-- Bootstrap first -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
@@ -126,7 +126,7 @@
       <div class="navbar-collapse collapse" id="navbarsExample09">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="https://badideainteractive.com/">Home</a>
+            <a class="nav-link" href="https://badideainteractive.com/" data-i18n="nav.home">Home</a>
           </li>
         </ul>
       </div>
@@ -138,13 +138,9 @@
     <div class="container">
       <div class="row mb-4">
         <div class="col">
-          <h2 class="section-title">Reward Lottery</h2>
-          <p class="section-lead">
-            Assign rewards (rewards + waitlist) randomly to a list of people.
-          </p>
-          <p class="tool-meta">
-            Output is TSV (<strong>person</strong> + <strong>reward</strong>) so you can paste directly into Excel.
-          </p>
+          <h2 class="section-title" data-i18n="reward.hero.title">Reward Lottery</h2>
+          <p class="section-lead" data-i18n="reward.hero.lead">Assign rewards (rewards + waitlist) randomly to a list of people.</p>
+          <p class="tool-meta" data-i18n-html="reward.hero.meta">Output is TSV (<strong>person</strong> + <strong>reward</strong>) so you can paste directly into Excel.</p>
         </div>
       </div>
 
@@ -152,11 +148,11 @@
         <div class="card-body">
           <div class="row g-4">
             <div class="col-lg-6">
-              <div class="tool-label">People <span class="tool-subtitle">(one per line)</span></div>
+              <div class="tool-label" data-i18n-html="reward.form.people_label">People <span class="tool-subtitle">(one per line)</span></div>
               <textarea id="names" class="tool-textarea" rows="10" placeholder="Alice&#10;Bob&#10;Charlie"></textarea>
             </div>
             <div class="col-lg-6">
-              <div class="tool-label">Rewards <span class="tool-subtitle">(one per line)</span></div>
+              <div class="tool-label" data-i18n-html="reward.form.rewards_label">Rewards <span class="tool-subtitle">(one per line)</span></div>
               <textarea id="rewards" class="tool-textarea" rows="10" placeholder="Spot A&#10;Spot B&#10;Waitlist 1"></textarea>
             </div>
           </div>
@@ -167,21 +163,21 @@
             <div class="col-lg-7">
               <div class="form-check form-switch tool-switch">
                 <input class="form-check-input" type="checkbox" role="switch" id="autoWaitlist" checked>
-                <label class="form-check-label" for="autoWaitlist">
+                <label class="form-check-label" for="autoWaitlist" data-i18n-html="reward.form.autowaitlist_label">
                   Auto-fill missing rewards with <strong>Waitlist #…</strong> to match number of people
                 </label>
               </div>
               <div class="mt-2 tool-meta">
-                <span id="countsText">0 people • 0 rewards</span>
+                <span id="countsText" data-i18n="reward.form.counts_initial">0 people • 0 rewards</span>
               </div>
             </div>
 
             <div class="col-lg-5">
               <div class="tool-actions">
-                <button id="assignBtn" class="btn btn-primary btn-primary">Assign randomly</button>
-                <button id="copyBtn" class="btn btn-secondary btn-secondary" type="button">Copy TSV</button>
+                <button id="assignBtn" class="btn btn-primary btn-primary" data-i18n="reward.form.assign_btn">Assign randomly</button>
+                <button id="copyBtn" class="btn btn-secondary btn-secondary" type="button" data-i18n="reward.form.copy_btn">Copy TSV</button>
               </div>
-              <div class="mt-2 text-end tool-status" id="statusText">Ready.</div>
+              <div class="mt-2 text-end tool-status" id="statusText" data-i18n="reward.form.status_ready">Ready.</div>
             </div>
           </div>
 
@@ -189,7 +185,7 @@
 
           <div class="row g-3">
             <div class="col-12">
-              <div class="tool-label">Results <span class="tool-subtitle">(TSV: person[TAB]reward)</span></div>
+              <div class="tool-label" data-i18n-html="reward.form.results_label">Results <span class="tool-subtitle">(TSV: person[TAB]reward)</span></div>
               <textarea id="results" class="tool-textarea" rows="12" readonly placeholder="person	reward"></textarea>
             </div>
           </div>
@@ -207,25 +203,22 @@
           <div class="footer-brand d-flex align-items-center mb-2">
             <img src="assets/img/logo_name.png" alt="Bad Idea Interactive" height="45" class="me-2">
           </div>
-          <p class="footer-text">
-            Indie studio turning “bad ideas” into focused arcade games, learning tools
-            and playful experiments.
-          </p>
+          <p class="footer-text" data-i18n="footer.tagline">Indie studio turning "bad ideas" into focused arcade games, learning tools and playful experiments.</p>
         </div>
 
         <div class="col-md-4">
-          <h4 class="footer-heading">Explore</h4>
+          <h4 class="footer-heading" data-i18n="footer.explore">Explore</h4>
           <ul class="footer-links">
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#games">Games</a></li>
-            <li><a href="index.html#apps">Apps</a></li>
-            <li><a href="random-number-generator.html">Tools</a></li>
+            <li><a href="index.html#about" data-i18n="reward.footer.about">About</a></li>
+            <li><a href="index.html#games" data-i18n="reward.footer.games">Games</a></li>
+            <li><a href="index.html#apps" data-i18n="reward.footer.apps">Apps</a></li>
+            <li><a href="random-number-generator.html" data-i18n="reward.footer.tools">Tools</a></li>
           </ul>
         </div>
 
         <div class="col-md-4">
-          <h4 class="footer-heading">Contact</h4>
-          <p class="footer-text">For collaborations, consulting or speaking:</p>
+          <h4 class="footer-heading" data-i18n="footer.contact">Contact</h4>
+          <p class="footer-text" data-i18n="footer.contact.desc">For collaborations, consulting or speaking:</p>
           <p class="footer-text">
             <a href="mailto:hello@badideainteractive.com">hello@badideainteractive.com</a>
           </p>
@@ -238,11 +231,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="mb-0">
-          © <span id="year"></span> Bad Idea Interactive. All rights reserved. All trademarks and property of their respective owners.
-          This website and the projects showcased are original works by Bad Idea Interactive and are not affiliated with any
-          other companies, brands, or public institutions.
-        </p>
+        <p class="mb-0" data-i18n-html="footer.legal">© <span id="year"></span> Bad Idea Interactive. All rights reserved. All trademarks and property of their respective owners. This website and the projects showcased are original works by Bad Idea Interactive and are not affiliated with any other companies, brands, or public institutions.</p>
       </div>
     </div>
   </footer>
@@ -367,5 +356,6 @@
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/i18n.js"></script>
 </body>
 </html>

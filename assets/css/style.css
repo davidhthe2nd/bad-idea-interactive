@@ -371,6 +371,21 @@ body.scrolled .navbar.sticky-top {
   margin-bottom: 10px;
 }
 
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+.social-links a {
+  color: #D62828;
+  text-decoration: none;
+}
+.social-links a:hover {
+  color: rgb(67.0711749267%, 12.5366682106%, 12.5366682106%);
+  text-decoration: underline;
+}
+
 .section-nav-pills {
   display: flex;
   flex-wrap: wrap;

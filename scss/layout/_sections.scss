@@ -98,6 +98,25 @@
   margin-bottom: 10px;
 }
 
+// Standalone social link row (same treatment as .footer .footer-socials,
+// unscoped so it also works outside the footer, e.g. /contact "Elsewhere")
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.85rem;
+
+  a {
+    color: $primary;
+    text-decoration: none;
+
+    &:hover {
+      color: darken($primary, 10%);
+      text-decoration: underline;
+    }
+  }
+}
+
 // Quick-nav pills — jumps to in-page sections (e.g. /lab status groups)
 .section-nav-pills {
   display: flex;

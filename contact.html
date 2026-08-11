@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Placeholder meta description — see /docs/site-architecture.md." />
-  <title>Contact — Bad Idea Interactive</title>
+  <meta name="description" data-i18n-attr="content:contact.meta.description" content="Get in touch with David Flórez Herrero — consulting enquiries, collaborations, press, or questions about the games. Based in Vigo, Spain. Replies within two working days." />
+  <title data-i18n="contact.meta.title">Contact — Bad Idea Interactive</title>
 
   <!-- 1) Bootstrap first -->
   <link
@@ -68,43 +68,82 @@
         </div>
     </nav>
 
-    <!-- Intro -->
-    <section id="intro" class="section hero">
+    <!-- Hero (light, per CLAUDE.md hero background rule) -->
+    <section id="hero" class="section hero">
         <div class="container">
-            <span class="hero-eyebrow" data-i18n="contact.intro.eyebrow">Placeholder — eyebrow</span>
-            <h1 class="hero-title" data-i18n="contact.intro.title">Placeholder — Contact title</h1>
-            <p class="section-lead" data-i18n="contact.intro.lead">Placeholder — Contact intro copy.</p>
+            <span class="hero-eyebrow" data-i18n="contact.hero.eyebrow">Get in touch</span>
+            <h1 class="hero-title" data-i18n="contact.hero.title">Different reasons to get in touch, different doors.</h1>
+            <p class="section-lead" data-i18n="contact.hero.lead">Pick whichever fits. I read everything that arrives and reply within two working days.</p>
+            <p class="text-muted" data-i18n="contact.hero.meta">Vigo, Spain · CET · Working in English, Spanish, French, and Portuguese</p>
         </div>
     </section>
 
     <!-- Route 1: consulting enquiry -> booking -->
     <section id="consulting-enquiry" class="section light">
         <div class="container">
-            <h2 class="section-title" data-i18n="contact.consulting.title">Placeholder — Consulting enquiry</h2>
-            <p data-i18n="contact.consulting.desc">Placeholder — routes to /consulting#book</p>
-            <a href="/consulting#book" class="btn btn-primary" data-i18n="contact.consulting.cta">Placeholder — Book a call</a>
+            <h2 class="section-title" data-i18n="contact.consulting.title">Consulting enquiry</h2>
+            <p data-i18n="contact.consulting.desc">If you're a studio with a pipeline, localization, or process problem, the fastest route is a call. Fifteen minutes, no commitment — we work out together whether there's a fit.</p>
+            <a href="/consulting#book" class="btn btn-primary" data-i18n="contact.consulting.cta">Book a call</a>
         </div>
     </section>
 
-    <!-- Route 2: general / press / collaboration -> email -->
+    <!-- Route 2: everything else -> form or email -->
     <section id="general" class="section">
         <div class="container">
-            <h2 class="section-title" data-i18n="contact.general.title">Placeholder — General enquiries</h2>
-            <p data-i18n="contact.general.desc">Placeholder — press, collaboration, or anything else</p>
-            <p>
-                <a href="mailto:hello@badideainteractive.com">hello@badideainteractive.com</a>
-            </p>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="section-title" data-i18n="contact.general.title">Anything else</h2>
+                    <p class="section-lead" data-i18n="contact.general.desc">Press, collaborations, a question about one of the games, or something that doesn't fit a category. Use the form, or email me directly — both reach the same place.</p>
+
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <!-- TODO: replace with the real Web3Forms access key from https://web3forms.com -->
+                        <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY" />
+
+                        <!-- Honeypot — left visually and structurally hidden, real users never see or fill it -->
+                        <input type="text" name="botcheck" class="d-none" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+                        <div class="mb-3">
+                            <label for="contact-name" class="form-label" data-i18n="contact.form.name_label">Your name</label>
+                            <input type="text" class="form-control" id="contact-name" name="name" required
+                                data-i18n-attr="placeholder:contact.form.name_placeholder" placeholder="Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact-email" class="form-label" data-i18n="contact.form.email_label">Email</label>
+                            <input type="email" class="form-control" id="contact-email" name="email" required
+                                data-i18n-attr="placeholder:contact.form.email_placeholder" placeholder="you@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact-message" class="form-label" data-i18n="contact.form.message_label">Message</label>
+                            <textarea class="form-control" id="contact-message" name="message" rows="5" required
+                                data-i18n-attr="placeholder:contact.form.message_placeholder" placeholder="What's on your mind?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send message</button>
+
+                        <p class="contact-form-status text-muted mt-3 d-none" data-status="sending" data-i18n="contact.form.sending">Sending…</p>
+                        <p class="contact-form-status text-success mt-3 d-none" data-status="success" data-i18n="contact.form.success">Thanks — that's arrived. I'll get back to you within two working days.</p>
+                        <p class="contact-form-status text-danger mt-3 d-none" data-status="error" data-i18n="contact.form.error">Something went wrong sending that. Email me directly at hello@badideainteractive.com and it'll reach me.</p>
+                    </form>
+
+                    <p class="small text-muted mt-3" data-i18n="contact.form.privacy">Submissions are handled by a third-party form service and sent to my inbox. Nothing is stored on this site or used for anything else.</p>
+
+                    <p class="mt-4">
+                        <span data-i18n="contact.email.label">Or email directly</span>: <a href="mailto:hello@badideainteractive.com">hello@badideainteractive.com</a>
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Route 3: social links -->
+    <!-- Route 3: elsewhere -->
     <section id="social" class="section light">
         <div class="container">
-            <h2 class="section-title" data-i18n="contact.social.title">Placeholder — Elsewhere</h2>
-            <div class="footer-socials">
-                <a href="http://linkedin.com/company/bad-idea-interactive" aria-label="LinkedIn">LinkedIn</a>
-                <a href="https://www.instagram.com/badideaint/" aria-label="Instagram">Instagram</a>
-                <a href="https://davidhthe1st.itch.io/" aria-label="Itch.io">Itch.io</a>
+            <h2 class="section-title" data-i18n="contact.social.title">Elsewhere</h2>
+            <p data-i18n="contact.social.desc">LinkedIn is the best place to reach me day to day.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/david-fl%C3%B3rez-herrero-50b95b98/" aria-label="LinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://www.instagram.com/badideaint/" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://davidhthe1st.itch.io/" aria-label="Itch.io" target="_blank" rel="noopener">Itch.io</a>
             </div>
         </div>
     </section>
@@ -116,7 +155,7 @@
                     <div class="footer-brand d-flex align-items-center mb-2">
                         <img src="assets/img/logo_name.png" alt="Bad Idea Interactive" height="45" class="me-2">
                     </div>
-                    <p class="footer-text" data-i18n="contact.footer.tagline">Placeholder — footer tagline</p>
+                    <p class="footer-text" data-i18n="footer.tagline">Indie studio turning "bad ideas" into focused arcade games, learning tools and playful experiments.</p>
                 </div>
 
                 <div class="col-md-4">
@@ -146,11 +185,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p class="footer-legal">
-                    © <span id="year"></span> Bad Idea Interactive. All rights reserved. All trademarks and property of their respective owners.
-                    This website and the projects showcased are original works by Bad Idea Interactive and are not affiliated with any
-                    other companies, brands, or public institutions.
-                </p>
+                <p class="footer-legal" data-i18n-html="footer.legal">© <span id="year"></span> Bad Idea Interactive. All rights reserved. All trademarks and property of their respective owners. This website and the projects showcased are original works by Bad Idea Interactive and are not affiliated with any other companies, brands, or public institutions.</p>
             </div>
         </div>
     </footer>
@@ -165,6 +200,61 @@
         });
 
         document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Contact form: submits to Web3Forms via fetch. No native submit, no redirect. -->
+    <script>
+        (function () {
+            var form = document.getElementById("contact-form");
+            if (!form) return;
+
+            var submitBtn = form.querySelector('button[type="submit"]');
+            var statusEls = Array.prototype.slice.call(form.querySelectorAll(".contact-form-status"));
+
+            function hideStatuses() {
+                statusEls.forEach(function (el) { el.classList.add("d-none"); });
+            }
+
+            function showStatus(name) {
+                hideStatuses();
+                var el = form.querySelector('.contact-form-status[data-status="' + name + '"]');
+                if (el) el.classList.remove("d-none");
+            }
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                // Honeypot: if a bot filled the hidden field, drop the submission silently.
+                var honeypot = form.querySelector('input[name="botcheck"]');
+                if (honeypot && honeypot.value) return;
+
+                showStatus("sending");
+                submitBtn.disabled = true;
+
+                var payload = {};
+                new FormData(form).forEach(function (value, key) { payload[key] = value; });
+
+                fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", Accept: "application/json" },
+                    body: JSON.stringify(payload)
+                })
+                    .then(function (res) { return res.json(); })
+                    .then(function (data) {
+                        submitBtn.disabled = false;
+                        if (data && data.success) {
+                            showStatus("success");
+                            form.reset();
+                        } else {
+                            showStatus("error");
+                        }
+                    })
+                    .catch(function () {
+                        submitBtn.disabled = false;
+                        showStatus("error");
+                    });
+            });
+        })();
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
