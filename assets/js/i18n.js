@@ -1,6 +1,6 @@
 (function () {
   var BASE_LANG = 'en';
-  var SUPPORTED = ['en', 'es', 'fr'];
+  var SUPPORTED = ['en', 'es', 'fr', 'zh-tw'];
   var cache = {};
   var requestToken = 0;
 
