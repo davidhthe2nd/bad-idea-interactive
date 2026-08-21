@@ -1,0 +1,9 @@
+languageIds:
+  - html
+
+usageMatchRegex:
+  - "data-i18n=\"({key})\""
+  - "data-i18n-html=\"({key})\""
+  - "data-i18n-attr=\"[a-zA-Z-]+:({key})\""
+
+monopoly: true

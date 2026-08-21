@@ -140,8 +140,8 @@
   "consulting.work.title": "Past work",
   "consulting.work.lead": "A selection of real engagements. More detail available on request.",
   "consulting.work.case1.tag": "Agile · Digital Product",
-  "consulting.work.case1.title": "Agile Transformation — Equinox (Altered TCG)",
-  "consulting.work.case1.desc": "Managed delivery of the Altered TCG digital adaptation on Board Game Arena, including a Scrum-to-Kanban transition that improved KPI compliance by 30%. Served as Product Owner across the Altered app and site, managing design and dev teams through a sim-ship physical and digital launch.",
+  "consulting.work.case1.title": "Agile Transformation — Gamabilis, Equinox",
+  "consulting.work.case1.desc": "Managed agile transformations and tool implementation. Manageddelivery of the Altered TCG digital adaptation on Board Game Arena. Served as Product Owner across the Altered app and site, managing design and dev teams through a sim-ship physical and digital launch.",
   "consulting.work.case1.tag1": "Agile",
   "consulting.work.case1.tag2": "Kanban",
   "consulting.work.case1.tag3": "Digital Product",
@@ -191,7 +191,7 @@
   "web.footer.nav.consulting": "Studio consulting",
   "web.footer.contact.title": "Contact",
   "web.footer.contact.desc": "For web & presence enquiries:",
-  "web.footer.legal": "&copy; <span id=\"year\"></span> David Florez Herrero. All rights reserved.",
+  "web.footer.legal": "&copy; <span id=\"year\"></span> David Flórez Herrero. All rights reserved.",
 
   "lab.hero.eyebrow": "Public R&D",
   "lab.meta.title": "Lab — Bad Idea Interactive",
@@ -253,7 +253,7 @@
   "lab.experiments.bullethell.hook": "A pure prototype, deliberately unscoped beyond the core.",
   "lab.experiments.bullethell.tech": "Unity · C#",
   "lab.experiments.bullethell.question": "How much of a game's systems can I hand to AI before the design stops being mine? Implementation is AI-assisted; every big-picture design decision stays with me. Where that line actually falls is the experiment.",
-  "lab.experiments.bullethell.findings": "[TO WRITE — in progress. Even a partial answer is worth having. Most current-feeling entry on the page and the one a consulting reader is most likely to stop on.]",
+  "lab.experiments.bullethell.findings": "The goal was to build a playable prototype in a weekend, and to keep scope scalable. The theme will have a big weight in this project. The AI assisted implementation accelerated things, but it confirmed that it's still key to test and adjust manually. Fun doesn't come from good numbers that make sense. This kind of games needs to mix solid maths and predictable patterns with chaos and over-the-top mechanics. The players need to feel overwhelmed, and I still haven't reached a point where AI can find the balanced between overwhelking and feasible.",
   "lab.experiments.bullethell.link": "Not public",
 
   "lab.shelved.noescape.status": "Shelved · 2025",
