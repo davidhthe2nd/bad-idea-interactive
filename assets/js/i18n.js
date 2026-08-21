@@ -1,6 +1,7 @@
 (function () {
   var BASE_LANG = 'en';
   var SUPPORTED = ['en', 'es', 'fr', 'zh-tw'];
+  var BCP47_TAGS = { en: 'en', es: 'es', fr: 'fr', 'zh-tw': 'zh-Hant-TW' };
   var cache = {};
   var requestToken = 0;
 
@@ -80,7 +81,7 @@
           });
         });
 
-        document.documentElement.lang = lang;
+        document.documentElement.lang = BCP47_TAGS[lang] || lang;
 
         document.querySelectorAll('.lang-select').forEach(function (sel) {
           sel.value = lang;

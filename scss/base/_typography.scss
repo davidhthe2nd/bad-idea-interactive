@@ -14,3 +14,7 @@ p {
   margin-bottom: $spacing-2;
   color: $black;
 }
+
+html[lang^="zh"] body {
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+}

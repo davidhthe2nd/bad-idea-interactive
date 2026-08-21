@@ -26,6 +26,10 @@ p {
   color: #0B0B0B;
 }
 
+html[lang^=zh] body {
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
+
 .btn-primary {
   padding: 12px 24px;
   border-radius: 6px;
