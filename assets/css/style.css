@@ -779,16 +779,46 @@ body.scrolled .navbar.sticky-top {
   color: #0B0B0B;
 }
 
-.mr-word-pinyin {
+.mr-annotation {
   display: flex;
+  line-height: 1.2;
+}
+
+.mr-annotation-pinyin {
   font-family: "Inter", sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
-  line-height: 1.2;
+}
+
+.mr-annotation-zhuyin {
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .mr-syllable + .mr-syllable {
   margin-left: 2px;
+}
+
+#mr-output .mr-annotation-zhuyin {
+  display: none;
+}
+#mr-output[data-mode=zhuyin] .mr-annotation-pinyin {
+  display: none;
+}
+#mr-output[data-mode=zhuyin] .mr-annotation-zhuyin {
+  display: flex;
+}
+#mr-output[data-mode=both] .mr-annotation-pinyin,
+#mr-output[data-mode=both] .mr-annotation-zhuyin {
+  display: flex;
+}
+#mr-output[data-mode=both] .mr-word {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+#mr-output[data-mode=both] {
+  row-gap: 16px;
 }
 
 .mr-plain {
@@ -819,18 +849,18 @@ body.scrolled .navbar.sticky-top {
   color: #6B7280;
 }
 
-.mr-convert-toggle {
+.mr-toggle-group {
   display: flex;
   gap: 8px;
   margin-bottom: 16px;
   flex-wrap: wrap;
 }
 
-.mr-direction.active {
+.mr-toggle-btn.active {
   background: #D62828;
   color: #FFFFFF;
 }
-.mr-direction.active:hover {
+.mr-toggle-btn.active:hover {
   background: rgb(67.0711749267%, 12.5366682106%, 12.5366682106%);
   color: #FFFFFF;
 }

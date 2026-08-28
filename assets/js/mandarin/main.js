@@ -13,6 +13,18 @@ input.addEventListener('input', () => {
   renderTimer = setTimeout(() => render(output, input.value), 150);
 });
 
+// Mode switch is purely a CSS attribute (see #mr-output[data-mode] in
+// _mandarin-reader.scss) — it must never re-segment or re-convert already
+// rendered text, so it does nothing but flip the attribute and the active
+// button state.
+const modeBtns = Array.from(document.querySelectorAll('.mr-mode-btn'));
+modeBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    output.setAttribute('data-mode', btn.getAttribute('data-mode'));
+    modeBtns.forEach((b) => b.classList.toggle('active', b === btn));
+  });
+});
+
 onVoiceReady((status) => {
   if (status.available) {
     voiceStatus.hidden = true;

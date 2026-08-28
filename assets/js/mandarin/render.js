@@ -14,6 +14,7 @@
 // back wrong when re-queried outside the sentence they were resolved in.
 import { segment, OutputFormat } from './pinyin-setup.js';
 import { speak } from './speech.js';
+import { pinyinToZhuyin } from './pinyin-to-zhuyin.js';
 
 // CJK Unified Ideographs + Extension A + Compatibility Ideographs, as \u
 // escapes to avoid any literal-glyph encoding issues in this source file.
@@ -51,20 +52,38 @@ function buildWordUnit(chars) {
   hanziRow.className = 'mr-word-hanzi';
   hanziRow.textContent = hanzi;
 
-  // Pinyin row is its own annotation row so a second row (e.g. zhuyin, once
-  // that's built) can sit alongside it without restructuring this markup.
+  // Pinyin and zhuyin are separate annotation rows, both always built (mode
+  // switching is pure CSS via #mr-output[data-mode] — see main.js — so it
+  // never re-segments or re-converts). Kept as siblings, not merged into one
+  // row, so a vertical-ruby layout could replace this without a rewrite.
   const pinyinRow = document.createElement('span');
-  pinyinRow.className = 'mr-word-pinyin';
+  pinyinRow.className = 'mr-annotation mr-annotation-pinyin';
+
+  const zhuyinRow = document.createElement('span');
+  zhuyinRow.className = 'mr-annotation mr-annotation-zhuyin';
 
   chars.forEach((c) => {
-    const syl = document.createElement('span');
-    syl.className = 'mr-syllable ' + toneClass(c.result);
-    syl.textContent = c.result || c.origin;
-    pinyinRow.appendChild(syl);
+    // Same tone class drives both rows, derived once from the pinyin — never
+    // re-derived from the zhuyin symbols — so the two can never disagree.
+    const cls = 'mr-syllable ' + toneClass(c.result);
+
+    const pinyinSyl = document.createElement('span');
+    pinyinSyl.className = cls;
+    pinyinSyl.textContent = c.result || c.origin;
+    pinyinRow.appendChild(pinyinSyl);
+
+    const { symbols, toneMark } = pinyinToZhuyin(c.result || '');
+    const zhuyinSyl = document.createElement('span');
+    zhuyinSyl.className = cls;
+    // Neutral tone's dot leads; every other tone (including unmarked tone 1)
+    // trails — this placement rule lives here, not in pinyin-to-zhuyin.js.
+    zhuyinSyl.textContent = toneMark === '˙' ? toneMark + symbols : symbols + toneMark;
+    zhuyinRow.appendChild(zhuyinSyl);
   });
 
   unit.appendChild(hanziRow);
   unit.appendChild(pinyinRow);
+  unit.appendChild(zhuyinRow);
   unit.addEventListener('click', () => {
     speak(hanzi);
   });

@@ -75,7 +75,7 @@
             <span class="hero-eyebrow">Learning tool</span>
             <h1 class="hero-title">Traditional Chinese reader</h1>
             <p class="section-lead">
-                Paste Traditional Chinese text below. Each word gets its own pinyin,
+                Paste Traditional Chinese text below. Each word gets its own pinyin or zhuyin,
                 coloured by tone, sitting under the hanzi — click a word to hear it read aloud.
             </p>
 
@@ -90,6 +90,12 @@
                     spellcheck="false"
                 ></textarea>
 
+                <div class="mr-toggle-group" role="group" aria-label="Annotation display">
+                    <button type="button" class="btn-ghost mr-toggle-btn mr-mode-btn active" data-mode="pinyin">Pinyin</button>
+                    <button type="button" class="btn-ghost mr-toggle-btn mr-mode-btn" data-mode="zhuyin">Zhuyin</button>
+                    <button type="button" class="btn-ghost mr-toggle-btn mr-mode-btn" data-mode="both">Both</button>
+                </div>
+
                 <div class="mr-tone-legend">
                     <span class="mr-legend-item"><span class="mr-swatch tone-1"></span>Tone 1</span>
                     <span class="mr-legend-item"><span class="mr-swatch tone-2"></span>Tone 2</span>
@@ -100,7 +106,7 @@
 
                 <p id="mr-voice-status" class="mr-voice-status" hidden></p>
 
-                <div id="mr-output" class="mr-output" aria-live="polite"></div>
+                <div id="mr-output" class="mr-output" data-mode="pinyin" aria-live="polite"></div>
             </div>
         </div>
     </section>
@@ -114,9 +120,9 @@
             </p>
 
             <div class="mr-panel">
-                <div class="mr-convert-toggle" role="group" aria-label="Conversion direction">
-                    <button type="button" class="btn-ghost mr-direction active" data-direction="s2t">Simplified → Traditional</button>
-                    <button type="button" class="btn-ghost mr-direction" data-direction="t2s">Traditional → Simplified</button>
+                <div class="mr-toggle-group" role="group" aria-label="Conversion direction">
+                    <button type="button" class="btn-ghost mr-toggle-btn mr-direction active" data-direction="s2t">Simplified → Traditional</button>
+                    <button type="button" class="btn-ghost mr-toggle-btn mr-direction" data-direction="t2s">Traditional → Simplified</button>
                 </div>
 
                 <label class="mr-label" for="mr-convert-input">Input</label>

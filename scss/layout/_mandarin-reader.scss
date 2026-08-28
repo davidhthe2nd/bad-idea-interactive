@@ -108,16 +108,62 @@
   color: $black;
 }
 
-.mr-word-pinyin {
+// Pinyin and zhuyin rows are both always rendered (see render.js) — display
+// mode is which one(s) are visible, controlled entirely by the data-mode
+// attribute below. Switching modes is CSS only; nothing re-renders.
+.mr-annotation {
   display: flex;
+  line-height: 1.2;
+}
+
+.mr-annotation-pinyin {
   font-family: $font-body;
   font-size: 0.85rem;
   font-weight: 600;
-  line-height: 1.2;
+}
+
+// Bopomofo block (U+3105-312F) and its tone marks (Spacing Modifier
+// Letters, e.g. U+02CA-02D9) commonly resolve to different fonts at
+// different metrics — an explicit stack keeps both on the same face instead
+// of the marks falling back and mismatching size/baseline.
+.mr-annotation-zhuyin {
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .mr-syllable + .mr-syllable {
   margin-left: 2px;
+}
+
+#mr-output {
+  // Default mode: pinyin only.
+  .mr-annotation-zhuyin {
+    display: none;
+  }
+
+  &[data-mode="zhuyin"] {
+    .mr-annotation-pinyin { display: none; }
+    .mr-annotation-zhuyin { display: flex; }
+  }
+
+  &[data-mode="both"] {
+    .mr-annotation-pinyin,
+    .mr-annotation-zhuyin {
+      display: flex;
+    }
+  }
+
+  // "both" mode adds a third row per unit — a little extra breathing room
+  // keeps units from visually colliding rather than shrinking the hanzi.
+  &[data-mode="both"] .mr-word {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  &[data-mode="both"] {
+    row-gap: $spacing-2;
+  }
 }
 
 .mr-plain {
@@ -134,15 +180,16 @@
 .tone-4 { color: $tone-4; }
 .tone-neutral { color: $tone-neutral; }
 
-// Converter panel
-.mr-convert-toggle {
+// Segmented toggle buttons — shared by the reader's annotation-mode toggle
+// and the converter's direction toggle.
+.mr-toggle-group {
   display: flex;
   gap: $spacing-1;
   margin-bottom: $spacing-2;
   flex-wrap: wrap;
 }
 
-.mr-direction.active {
+.mr-toggle-btn.active {
   background: $primary;
   color: $white;
 
