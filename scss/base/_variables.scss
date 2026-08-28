@@ -28,3 +28,12 @@ $spacing-6: 64px;
 // Shadows
 $shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.09);
 $shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.18);
+
+// Tone colours (Mandarin reading tool). Brand red/navy anchor the two
+// extremes; amber/teal fill the middle tones. All five clear 4.5:1 on white —
+// do NOT reuse $mid-grey (#A3A3A3, ~2.3:1) for the neutral tone.
+$tone-1: $primary;       // high flat
+$tone-2: #B45309;        // rising — amber
+$tone-3: #0F766E;        // dip — teal
+$tone-4: $blue;          // falling
+$tone-neutral: #6B7280;  // neutral / light tone

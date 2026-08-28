@@ -667,4 +667,180 @@ body.scrolled .navbar.sticky-top {
   color: #FFFFFF;
 }
 
+.mr-panel {
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.09);
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.mr-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.mr-textarea {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 10px 14px;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+.mr-textarea:focus {
+  border-color: #D62828;
+  box-shadow: 0 0 0 3px rgba(214, 40, 40, 0.12);
+  outline: none;
+}
+
+.mr-tone-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 0.8rem;
+  color: #A3A3A3;
+}
+
+.mr-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mr-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.mr-swatch.tone-1 {
+  background: #D62828;
+}
+.mr-swatch.tone-2 {
+  background: #B45309;
+}
+.mr-swatch.tone-3 {
+  background: #0F766E;
+}
+.mr-swatch.tone-4 {
+  background: #1E3A5F;
+}
+.mr-swatch.tone-neutral {
+  background: #6B7280;
+}
+
+.mr-voice-status {
+  background: #F4F4F4;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: #0B0B0B;
+  margin-bottom: 16px;
+}
+
+.mr-output {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 8px;
+  min-height: 60px;
+}
+
+.mr-word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: inherit;
+}
+.mr-word:hover, .mr-word:focus-visible {
+  background: #F4F4F4;
+  outline: none;
+}
+.mr-word.is-unspeakable {
+  cursor: default;
+}
+
+.mr-word-hanzi {
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  color: #0B0B0B;
+}
+
+.mr-word-pinyin {
+  display: flex;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.mr-syllable + .mr-syllable {
+  margin-left: 2px;
+}
+
+.mr-plain {
+  align-self: flex-end;
+  padding-bottom: 4px;
+  white-space: pre-wrap;
+  color: #0B0B0B;
+  font-size: 1.1rem;
+}
+
+.tone-1 {
+  color: #D62828;
+}
+
+.tone-2 {
+  color: #B45309;
+}
+
+.tone-3 {
+  color: #0F766E;
+}
+
+.tone-4 {
+  color: #1E3A5F;
+}
+
+.tone-neutral {
+  color: #6B7280;
+}
+
+.mr-convert-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.mr-direction.active {
+  background: #D62828;
+  color: #FFFFFF;
+}
+.mr-direction.active:hover {
+  background: rgb(67.0711749267%, 12.5366682106%, 12.5366682106%);
+  color: #FFFFFF;
+}
+
+.mr-convert-btn {
+  margin-bottom: 24px;
+}
+
+.mr-copy-btn {
+  margin-top: 8px;
+}
+
 /*# sourceMappingURL=style.css.map */

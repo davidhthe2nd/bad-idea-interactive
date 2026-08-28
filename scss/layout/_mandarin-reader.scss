@@ -1,0 +1,161 @@
+// Mandarin reading tool — word units, tone colours, converter panel.
+.mr-panel {
+  background: $white;
+  border-radius: 8px;
+  box-shadow: $shadow-soft;
+  padding: $spacing-3;
+  margin-top: $spacing-3;
+}
+
+.mr-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: $spacing-1;
+}
+
+.mr-textarea {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 10px 14px;
+  font-size: 1rem;
+  font-family: $font-body;
+  margin-bottom: $spacing-2;
+  resize: vertical;
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.12);
+    outline: none;
+  }
+}
+
+// Tone legend
+.mr-tone-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-2;
+  margin-bottom: $spacing-2;
+  font-size: 0.8rem;
+  color: $mid-grey;
+}
+
+.mr-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mr-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+
+  &.tone-1 { background: $tone-1; }
+  &.tone-2 { background: $tone-2; }
+  &.tone-3 { background: $tone-3; }
+  &.tone-4 { background: $tone-4; }
+  &.tone-neutral { background: $tone-neutral; }
+}
+
+.mr-voice-status {
+  background: $light;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: $black;
+  margin-bottom: $spacing-2;
+}
+
+// Rendered output — word units
+.mr-output {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: $spacing-1;
+  min-height: 60px;
+}
+
+.mr-word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: inherit;
+
+  &:hover,
+  &:focus-visible {
+    background: $light;
+    outline: none;
+  }
+
+  &.is-unspeakable {
+    cursor: default;
+  }
+}
+
+.mr-word-hanzi {
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  color: $black;
+}
+
+.mr-word-pinyin {
+  display: flex;
+  font-family: $font-body;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.mr-syllable + .mr-syllable {
+  margin-left: 2px;
+}
+
+.mr-plain {
+  align-self: flex-end;
+  padding-bottom: 4px;
+  white-space: pre-wrap;
+  color: $black;
+  font-size: 1.1rem;
+}
+
+.tone-1 { color: $tone-1; }
+.tone-2 { color: $tone-2; }
+.tone-3 { color: $tone-3; }
+.tone-4 { color: $tone-4; }
+.tone-neutral { color: $tone-neutral; }
+
+// Converter panel
+.mr-convert-toggle {
+  display: flex;
+  gap: $spacing-1;
+  margin-bottom: $spacing-2;
+  flex-wrap: wrap;
+}
+
+.mr-direction.active {
+  background: $primary;
+  color: $white;
+
+  &:hover {
+    background: darken($primary, 10%);
+    color: $white;
+  }
+}
+
+.mr-convert-btn {
+  margin-bottom: $spacing-3;
+}
+
+.mr-copy-btn {
+  margin-top: $spacing-1;
+}
