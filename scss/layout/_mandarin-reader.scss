@@ -69,13 +69,38 @@
   margin-bottom: $spacing-2;
 }
 
-// Rendered output — word units
+// Rendered output — one .mr-line per input line, word units inside it.
+// The container itself is a column: it never lays units out directly, so no
+// unit can ever end up on a row belonging to another input line.
 .mr-output {
+  display: flex;
+  flex-direction: column;
+  min-height: 60px;
+}
+
+// One input line. Units wrap within it; the line is block-level, so the next
+// line always starts fresh.
+.mr-line {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  gap: $spacing-1;
-  min-height: 60px;
+  column-gap: $spacing-1;
+  row-gap: $spacing-1;
+}
+
+// Separation between two input lines, deliberately wider than .mr-line's
+// row-gap above: without that difference a real line break and a wrapped row
+// look identical and the preserved structure is invisible.
+.mr-output > * + * {
+  margin-top: $spacing-2;
+}
+
+// A blank input line is a paragraph break. It needs real height of its own —
+// an empty flex child collapses to nothing — and it stacks with the
+// margin-top on either side, so a paragraph break reads clearly wider than a
+// plain line break.
+.mr-blank-line {
+  height: $spacing-2;
 }
 
 .mr-word {
@@ -161,8 +186,14 @@
     padding-bottom: 6px;
   }
 
-  &[data-mode="both"] {
+  // Three rows per unit needs more room between wrapped rows — and, in turn,
+  // more between whole lines, so the line/wrap distinction survives.
+  &[data-mode="both"] .mr-line {
     row-gap: $spacing-2;
+  }
+
+  &[data-mode="both"] > * + * {
+    margin-top: $spacing-3;
   }
 }
 

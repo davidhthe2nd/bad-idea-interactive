@@ -98,9 +98,12 @@ function buildPlainUnit(text) {
   return span;
 }
 
-export function render(container, text) {
-  container.innerHTML = '';
-  if (!text) return;
+// One input line -> one block-level flex row of units. Units wrap within the
+// row (a long line still wraps, which is correct); separate lines are separate
+// elements, so two lines can never flow into each other.
+function buildLine(text) {
+  const line = document.createElement('div');
+  line.className = 'mr-line';
 
   // Split into alternating Han-character runs and everything else (Latin,
   // digits, whitespace, punctuation), so punctuation/latin pass through
@@ -111,10 +114,38 @@ export function render(container, text) {
     if (HAN_FULL.test(part)) {
       const words = segment(part, { format: OutputFormat.AllArray });
       words.forEach((chars) => {
-        container.appendChild(buildWordUnit(chars));
+        line.appendChild(buildWordUnit(chars));
       });
     } else {
-      container.appendChild(buildPlainUnit(part));
+      line.appendChild(buildPlainUnit(part));
     }
+  });
+
+  return line;
+}
+
+// A blank input line is a paragraph break, so it gets a real element with real
+// height (see .mr-blank-line) — an empty flex child collapses to zero and the
+// break disappears.
+function buildBlankLine() {
+  const spacer = document.createElement('div');
+  spacer.className = 'mr-blank-line';
+  spacer.setAttribute('aria-hidden', 'true');
+  return spacer;
+}
+
+export function render(container, text) {
+  container.innerHTML = '';
+  if (!text) return;
+
+  // Split on newlines FIRST, then segment each line independently. The
+  // segmenter treats its input as one stream and will merge characters across
+  // a newline into a single word, resolving polyphones against a context that
+  // doesn't exist in the text — so segmenting the whole blob and reinserting
+  // the breaks afterwards bakes wrong readings in at every line boundary.
+  text.split('\n').forEach((rawLine) => {
+    // Trailing \r from CRLF input would otherwise render as a stray plain unit.
+    const line = rawLine.replace(/\r$/, '');
+    container.appendChild(line.trim() === '' ? buildBlankLine() : buildLine(line));
   });
 }
