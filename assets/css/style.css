@@ -766,6 +766,13 @@ body.scrolled .navbar.sticky-top {
   height: 16px;
 }
 
+.mr-bind {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  column-gap: 8px;
+}
+
 .mr-word {
   display: flex;
   flex-direction: column;

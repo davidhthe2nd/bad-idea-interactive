@@ -103,6 +103,17 @@
   height: $spacing-2;
 }
 
+// A unit and whatever is bound to it — punctuation that must not start a row
+// alone, or the pair the orphan pass pulled together — form a single flex item
+// of the line, so the line can wrap around them but never between them. The
+// column-gap matches .mr-line's, so binding changes wrapping and nothing else.
+.mr-bind {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  column-gap: $spacing-1;
+}
+
 .mr-word {
   display: flex;
   flex-direction: column;
