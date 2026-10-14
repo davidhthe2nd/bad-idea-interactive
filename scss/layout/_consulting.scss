@@ -43,6 +43,15 @@
   margin-top: $spacing-1;
 }
 
+// Link out to /global-ready. The only entry point to the self-check: it is
+// deliberately not in the nav or the footer.
+.service-selfcheck {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: $spacing-2;
+  margin-bottom: 0;
+}
+
 .case-card .card-body {
   padding: $spacing-4;
 }

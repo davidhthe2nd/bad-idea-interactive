@@ -135,7 +135,7 @@ function main() {
   }
 
   // 3. Key parity between en.json and each target locale
-  const targets = ['es.json', 'fr.json'];
+  const targets = ['es.json', 'fr.json', 'zh-tw.json'];
   for (const targetName of targets) {
     const targetPath = path.join(I18N_DIR, targetName);
     const target = loadJson(targetPath);

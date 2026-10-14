@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "answers": ["yes", "no", "notsure"],
+  "scoring": {
+    "yes": 1,
+    "no": 0,
+    "notsure": 0,
+    "recordNotSureSeparately": true
+  },
+  "clusters": [
+    { "id": "plan",     "questions": ["q1", "q2", "q3"],    "stages": ["Decide", "Launch and operate"], "guideSections": ["02-decide", "08-launch-and-operate"] },
+    { "id": "build",    "questions": ["q4", "q5", "q6"],    "stages": ["Design"],                       "guideSections": ["03-design-for-global"] },
+    { "id": "content",  "questions": ["q7", "q8", "q9"],    "stages": ["Source content", "Adapt"],      "guideSections": ["04-source-content", "05-adapt"] },
+    { "id": "pipeline", "questions": ["q10", "q11", "q12"], "stages": ["Pipeline", "Verify"],           "guideSections": ["06-pipeline", "07-verify"] }
+  ],
+  "clusterStatus": {
+    "weak":    { "min": 0, "max": 1, "showWeakLine": true },
+    "partial": { "min": 2, "max": 2, "showWeakLine": false },
+    "solid":   { "min": 3, "max": 3, "showWeakLine": false }
+  },
+  "bands": [
+    { "id": "retrofit", "min": 0, "max": 4,  "ctaTarget": "BOOKING_URL" },
+    { "id": "gaps",     "min": 5, "max": 8,  "ctaTarget": "BOOKING_URL" },
+    { "id": "ready",    "min": 9, "max": 12, "ctaTarget": "BOOKING_URL" }
+  ],
+  "questionToPrinciple": {
+    "q1": [1, 2], "q2": [13], "q3": [14], "q4": [4], "q5": [5], "q6": [6],
+    "q7": [7], "q8": [8], "q9": [9], "q10": [10], "q11": [11], "q12": [12]
+  },
+  "flow": [
+    "intro (stage toggle)",
+    "12 statements, one per screen, Back allowed",
+    "result: total score + band title + band message (free)",
+    "email gate",
+    "breakdown: per-cluster score and status, weak lines, not-sure count, band CTA, PDF download, retake"
+  ],
+  "webhookPayload": {
+    "version": 1,
+    "fields": ["email", "consentResults", "consentNewsletter", "lang", "stage", "total", "band", "clusters", "answers", "notSureCount", "timestamp", "source"]
+  }
+}

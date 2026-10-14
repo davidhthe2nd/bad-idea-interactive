@@ -1,0 +1,269 @@
+// Global-ready self-check (/global-ready). One screen visible at a time; the
+// rest of the flow is in the markup with [hidden] on it, so none of this
+// styling may set display on .quiz-screen without honouring that.
+
+.quiz-container {
+  max-width: 760px;
+}
+
+// Belt and braces over the UA default: a screen is shown or hidden purely by
+// the hidden attribute, and a stray display rule elsewhere must not win.
+.quiz-screen[hidden],
+.quiz-statement[hidden],
+.quiz-band[hidden],
+.quiz-status[hidden],
+.quiz-cluster-weak[hidden],
+.quiz-notsure[hidden],
+.quiz-gate-status[hidden],
+.quiz-gate-success[hidden],
+.quiz-cta[hidden] {
+  display: none !important;
+}
+
+.quiz-screen + .quiz-screen:not([hidden]) {
+  margin-top: $spacing-6;
+  padding-top: $spacing-5;
+  border-top: 2px solid $primary;
+}
+
+.quiz-rules {
+  color: $black;
+  font-size: 0.95rem;
+  background: $light;
+  border-radius: 8px;
+  padding: $spacing-2;
+  margin-bottom: $spacing-3;
+}
+
+// --- Intro: stage toggle ---------------------------------------------------
+.quiz-stage {
+  border: 0;
+  margin: 0 0 $spacing-3;
+  padding: 0;
+}
+
+.quiz-stage-label {
+  float: none; // Bootstrap floats legends full-width; this one is a label.
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: $spacing-1;
+}
+
+// --- Statements ------------------------------------------------------------
+.quiz-progress {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $mid-grey;
+  margin-bottom: $spacing-1;
+}
+
+.quiz-progress-track {
+  height: 4px;
+  border-radius: 999px;
+  background: $light;
+  overflow: hidden;
+  margin-bottom: $spacing-4;
+}
+
+.quiz-progress-fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: $primary;
+  transition: width 0.2s;
+}
+
+// Reserves the height of the longest statement so the answer buttons do not
+// jump up and down as the visitor moves through the twelve.
+.quiz-statements {
+  min-height: 5.5rem;
+  margin-bottom: $spacing-3;
+}
+
+.quiz-statement {
+  font-family: $font-headings;
+  font-size: 1.35rem;
+  line-height: 1.35;
+  color: $black;
+  margin: 0;
+}
+
+.quiz-answers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-2;
+  margin-bottom: $spacing-3;
+}
+
+.btn-answer {
+  flex: 1 1 8rem;
+  background: $white;
+  color: $black;
+  border: 2px solid $light;
+  border-radius: 8px;
+  padding: $spacing-2;
+  font-weight: 600;
+  transition: 0.2s;
+
+  &:hover {
+    border-color: $primary;
+    color: $primary;
+  }
+
+  &.is-selected {
+    background: $primary;
+    border-color: $primary;
+    color: $white;
+  }
+}
+
+// --- Result ----------------------------------------------------------------
+.quiz-total {
+  font-family: $font-headings;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.15;
+  color: $primary;
+  margin-bottom: $spacing-2;
+}
+
+.quiz-band-message {
+  font-size: 1.05rem;
+  margin-bottom: 0;
+}
+
+// --- Breakdown -------------------------------------------------------------
+.quiz-clusters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: $spacing-3;
+  margin-bottom: $spacing-3;
+}
+
+.quiz-cluster {
+  background: $white;
+  border-radius: 8px;
+  box-shadow: $shadow-soft;
+  padding: $spacing-3;
+}
+
+.quiz-cluster-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: $spacing-2;
+  margin-bottom: $spacing-1;
+}
+
+.quiz-cluster-name {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.quiz-cluster-score {
+  font-family: $font-headings;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+// Status is a pill, coloured by which one the breakdown revealed. The colour
+// carries meaning, so the word is always there too — never colour alone.
+.quiz-status {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 2px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+
+  &[data-status="weak"] {
+    background: rgba($primary, 0.12);
+    color: $primary;
+  }
+
+  &[data-status="partial"] {
+    background: rgba($blue, 0.12);
+    color: $blue;
+  }
+
+  &[data-status="solid"] {
+    background: rgba($tone-3, 0.12);
+    color: $tone-3;
+  }
+}
+
+.quiz-cluster-weak {
+  margin: $spacing-2 0 0;
+  font-size: 0.9rem;
+  color: $black;
+}
+
+.quiz-notsure {
+  background: $light;
+  border-left: 3px solid $primary;
+  border-radius: 0 8px 8px 0;
+  padding: $spacing-2;
+  font-size: 0.95rem;
+  margin-bottom: $spacing-3;
+}
+
+.quiz-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-2;
+  align-items: center;
+}
+
+// --- Gate ------------------------------------------------------------------
+.quiz-gate-form {
+  max-width: 480px;
+}
+
+.quiz-gate-privacy {
+  font-size: 0.85rem;
+  margin-bottom: $spacing-2;
+}
+
+.quiz-gate-status {
+  margin: $spacing-2 0 0;
+  font-size: 0.9rem;
+}
+
+.quiz-gate-error {
+  color: $primary;
+  font-weight: 600;
+}
+
+.quiz-gate-footnote {
+  margin: $spacing-2 0 0;
+  font-size: 0.8rem;
+  color: $mid-grey;
+}
+
+.quiz-gate-success {
+  background: $light;
+  border-left: 3px solid $tone-3;
+  border-radius: 0 8px 8px 0;
+  padding: $spacing-2;
+  font-weight: 600;
+  margin-bottom: $spacing-3;
+}
+
+@media (max-width: 575px) {
+  .quiz-total {
+    font-size: 2.25rem;
+  }
+
+  .quiz-statement {
+    font-size: 1.15rem;
+  }
+
+  .btn-answer {
+    flex-basis: 100%;
+  }
+}

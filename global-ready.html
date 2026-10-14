@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-attr="content:quiz.meta.description" content="A 12-statement self-check on how ready your game, app or website is to ship in more than one language. About three minutes." />
+  <title data-i18n="quiz.meta.title">Are you global-ready? | Bad Idea Interactive</title>
+
+  <!-- 1) Bootstrap first -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- 2) YOUR CSS last -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Main navigation">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="assets/img/logo_name.png"
+                alt="Bad Idea Interactive"
+                height="45"
+                class="me-2">
+            </a>
+
+            <button class="navbar-toggler collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarsExample09"
+                    aria-controls="navbarsExample09"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse" id="navbarsExample09">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link" href="/" data-i18n="nav.home">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/lab" data-i18n="nav.lab">Lab</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/consulting" data-i18n="nav.consulting">Consulting</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/web" data-i18n="nav.web">Web</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/notes" data-i18n="nav.notes">Notes</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/contact" data-i18n="nav.contact">Contact</a>
+                </li>
+                <li class="nav-item lang-selector ms-lg-3">
+                    <select class="lang-select" onchange="setLanguage(this.value)">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                        <option value="zh-tw">ZH-TW</option>
+                    </select>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--
+      Every screen and every string variant below is pre-rendered with a
+      literal data-i18n key, then shown or hidden by assets/js/quiz/. Nothing
+      constructs a key or assembles a sentence in JS: that keeps all of these
+      visible to scripts/i18n-audit.js and to i18n-ally, and keeps whole
+      sentences translatable rather than glued together from fragments.
+    -->
+    <section class="section quiz">
+        <div class="container quiz-container">
+
+            <!-- Screen 1: intro -->
+            <div class="quiz-screen" data-screen="intro">
+                <span class="hero-eyebrow" data-i18n="quiz.intro.eyebrow">Localization self-check</span>
+                <h1 class="hero-title" data-i18n="quiz.intro.title">Are you global-ready?</h1>
+                <p class="section-lead" data-i18n="quiz.intro.lead"></p>
+                <p class="quiz-rules" data-i18n="quiz.intro.rules"></p>
+
+                <fieldset class="quiz-stage">
+                    <legend class="quiz-stage-label" data-i18n="quiz.intro.stage.label"></legend>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="quiz-stage" id="quiz-stage-production" value="production" checked>
+                        <label class="form-check-label" for="quiz-stage-production" data-i18n="quiz.intro.stage.production"></label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="quiz-stage" id="quiz-stage-early" value="early">
+                        <label class="form-check-label" for="quiz-stage-early" data-i18n="quiz.intro.stage.early"></label>
+                    </div>
+                </fieldset>
+
+                <button type="button" class="btn btn-primary" id="quiz-start" data-i18n="quiz.intro.start">Start</button>
+            </div>
+
+            <!-- Screen 2: the twelve statements, one visible at a time -->
+            <div class="quiz-screen" data-screen="questions" hidden>
+                <p class="quiz-progress" data-i18n="quiz.progress" data-i18n-vars="current:1,total:12"></p>
+                <div class="quiz-progress-track" role="presentation">
+                    <span class="quiz-progress-fill" id="quiz-progress-fill"></span>
+                </div>
+
+                <div class="quiz-statements" aria-live="polite">
+                    <p class="quiz-statement" data-question="q1" data-i18n="quiz.q1" hidden></p>
+                    <p class="quiz-statement" data-question="q2" data-i18n="quiz.q2" hidden></p>
+                    <p class="quiz-statement" data-question="q3" data-i18n="quiz.q3" hidden></p>
+                    <p class="quiz-statement" data-question="q4" data-i18n="quiz.q4" hidden></p>
+                    <p class="quiz-statement" data-question="q5" data-i18n="quiz.q5" hidden></p>
+                    <p class="quiz-statement" data-question="q6" data-i18n="quiz.q6" hidden></p>
+                    <p class="quiz-statement" data-question="q7" data-i18n="quiz.q7" hidden></p>
+                    <p class="quiz-statement" data-question="q8" data-i18n="quiz.q8" hidden></p>
+                    <p class="quiz-statement" data-question="q9" data-i18n="quiz.q9" hidden></p>
+                    <p class="quiz-statement" data-question="q10" data-i18n="quiz.q10" hidden></p>
+                    <p class="quiz-statement" data-question="q11" data-i18n="quiz.q11" hidden></p>
+                    <p class="quiz-statement" data-question="q12" data-i18n="quiz.q12" hidden></p>
+                </div>
+
+                <div class="quiz-answers">
+                    <button type="button" class="btn btn-answer" data-answer="yes" data-i18n="quiz.answer.yes"></button>
+                    <button type="button" class="btn btn-answer" data-answer="no" data-i18n="quiz.answer.no"></button>
+                    <button type="button" class="btn btn-answer" data-answer="notsure" data-i18n="quiz.answer.notsure"></button>
+                </div>
+
+                <button type="button" class="btn btn-ghost quiz-back" id="quiz-back" data-i18n="quiz.back"></button>
+            </div>
+
+            <!-- Screen 3: the free result. All three bands are pre-rendered; one is shown. -->
+            <div class="quiz-screen" data-screen="result" hidden>
+                <span class="hero-eyebrow" data-i18n="quiz.result.eyebrow"></span>
+                <p class="quiz-total" data-i18n="quiz.result.total" data-i18n-vars="score:0,total:12"></p>
+
+                <div class="quiz-band" data-band="retrofit" hidden>
+                    <h2 class="section-title" data-i18n="quiz.band.retrofit.title"></h2>
+                    <p class="quiz-band-message" data-i18n="quiz.band.retrofit.message"></p>
+                </div>
+                <div class="quiz-band" data-band="gaps" hidden>
+                    <h2 class="section-title" data-i18n="quiz.band.gaps.title"></h2>
+                    <p class="quiz-band-message" data-i18n="quiz.band.gaps.message"></p>
+                </div>
+                <div class="quiz-band" data-band="ready" hidden>
+                    <h2 class="section-title" data-i18n="quiz.band.ready.title"></h2>
+                    <p class="quiz-band-message" data-i18n="quiz.band.ready.message"></p>
+                </div>
+            </div>
+
+            <!--
+              Screen 4: the email gate. Shown only when gate.enabled is true in
+              assets/quiz/quiz-config.json. It is false by default; with it off this
+              screen never appears, the breakdown below is free, and the PDF button
+              stays hidden.
+            -->
+            <div class="quiz-screen" data-screen="gate" hidden>
+                <h2 class="section-title" data-i18n="quiz.gate.title"></h2>
+                <p class="section-lead" data-i18n="quiz.gate.body"></p>
+
+                <form class="quiz-gate-form" id="quiz-gate-form" novalidate>
+                    <div class="mb-3">
+                        <label class="form-label" for="quiz-email" data-i18n="quiz.gate.email.label"></label>
+                        <input type="email" class="form-control" id="quiz-email" name="email" required
+                               data-i18n-attr="placeholder:quiz.gate.email.placeholder" placeholder="you@company.com">
+                    </div>
+
+                    <!-- EU consent: explicit, and neither box pre-ticked. -->
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="quiz-consent-results" name="consentResults" required>
+                        <label class="form-check-label" for="quiz-consent-results" data-i18n="quiz.gate.consent.results"></label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="quiz-consent-newsletter" name="consentNewsletter">
+                        <label class="form-check-label" for="quiz-consent-newsletter" data-i18n="quiz.gate.consent.newsletter"></label>
+                    </div>
+
+                    <p class="quiz-gate-privacy">
+                        <!--
+                          TODO: there is no site-wide privacy policy yet. app-privacy-policy.html
+                          is the Mandarin Daily *app* policy, not this site's, so it is not a valid
+                          target here. Set gate.privacyUrl in assets/quiz/quiz-config.json to the
+                          real policy before enabling the gate.
+                        -->
+                        <a id="quiz-privacy-link" href="#" data-i18n="quiz.gate.privacy"></a>
+                    </p>
+
+                    <button type="submit" class="btn btn-primary" id="quiz-gate-submit" data-i18n="quiz.gate.submit"></button>
+
+                    <!-- Reuses the generic contact.form.sending ("Sending…"), already
+                         translated in all four locales. -->
+                    <p class="quiz-gate-status" data-status="sending" data-i18n="contact.form.sending" hidden></p>
+                    <p class="quiz-gate-status quiz-gate-error" data-status="email" data-i18n="quiz.gate.error.email" hidden></p>
+                    <p class="quiz-gate-status quiz-gate-error" data-status="consent" data-i18n="quiz.gate.error.consent" hidden></p>
+                    <p class="quiz-gate-status quiz-gate-error" data-status="generic" data-i18n="quiz.gate.error.generic" hidden></p>
+
+                    <p class="quiz-gate-footnote" data-i18n="quiz.gate.footnote"></p>
+                </form>
+            </div>
+
+            <!-- Screen 5: the breakdown -->
+            <div class="quiz-screen" data-screen="breakdown" hidden>
+                <p class="quiz-gate-success" data-i18n="quiz.gate.success" hidden></p>
+
+                <h2 class="section-title" data-i18n="quiz.breakdown.title"></h2>
+
+                <div class="quiz-clusters">
+                    <div class="quiz-cluster" data-cluster="plan">
+                        <div class="quiz-cluster-head">
+                            <h3 class="quiz-cluster-name" data-i18n="quiz.cluster.plan.name"></h3>
+                            <p class="quiz-cluster-score" data-i18n="quiz.breakdown.score" data-i18n-vars="score:0"></p>
+                        </div>
+                        <p class="quiz-status" data-status="weak" data-i18n="quiz.breakdown.status.weak" hidden></p>
+                        <p class="quiz-status" data-status="partial" data-i18n="quiz.breakdown.status.partial" hidden></p>
+                        <p class="quiz-status" data-status="solid" data-i18n="quiz.breakdown.status.solid" hidden></p>
+                        <p class="quiz-cluster-weak" data-i18n="quiz.cluster.plan.weak" hidden></p>
+                    </div>
+                    <div class="quiz-cluster" data-cluster="build">
+                        <div class="quiz-cluster-head">
+                            <h3 class="quiz-cluster-name" data-i18n="quiz.cluster.build.name"></h3>
+                            <p class="quiz-cluster-score" data-i18n="quiz.breakdown.score" data-i18n-vars="score:0"></p>
+                        </div>
+                        <p class="quiz-status" data-status="weak" data-i18n="quiz.breakdown.status.weak" hidden></p>
+                        <p class="quiz-status" data-status="partial" data-i18n="quiz.breakdown.status.partial" hidden></p>
+                        <p class="quiz-status" data-status="solid" data-i18n="quiz.breakdown.status.solid" hidden></p>
+                        <p class="quiz-cluster-weak" data-i18n="quiz.cluster.build.weak" hidden></p>
+                    </div>
+                    <div class="quiz-cluster" data-cluster="content">
+                        <div class="quiz-cluster-head">
+                            <h3 class="quiz-cluster-name" data-i18n="quiz.cluster.content.name"></h3>
+                            <p class="quiz-cluster-score" data-i18n="quiz.breakdown.score" data-i18n-vars="score:0"></p>
+                        </div>
+                        <p class="quiz-status" data-status="weak" data-i18n="quiz.breakdown.status.weak" hidden></p>
+                        <p class="quiz-status" data-status="partial" data-i18n="quiz.breakdown.status.partial" hidden></p>
+                        <p class="quiz-status" data-status="solid" data-i18n="quiz.breakdown.status.solid" hidden></p>
+                        <p class="quiz-cluster-weak" data-i18n="quiz.cluster.content.weak" hidden></p>
+                    </div>
+                    <div class="quiz-cluster" data-cluster="pipeline">
+                        <div class="quiz-cluster-head">
+                            <h3 class="quiz-cluster-name" data-i18n="quiz.cluster.pipeline.name"></h3>
+                            <p class="quiz-cluster-score" data-i18n="quiz.breakdown.score" data-i18n-vars="score:0"></p>
+                        </div>
+                        <p class="quiz-status" data-status="weak" data-i18n="quiz.breakdown.status.weak" hidden></p>
+                        <p class="quiz-status" data-status="partial" data-i18n="quiz.breakdown.status.partial" hidden></p>
+                        <p class="quiz-status" data-status="solid" data-i18n="quiz.breakdown.status.solid" hidden></p>
+                        <p class="quiz-cluster-weak" data-i18n="quiz.cluster.pipeline.weak" hidden></p>
+                    </div>
+                </div>
+
+                <!-- Singular and plural are separate whole sentences, not a stem plus a
+                     number: only one is ever shown, and neither is shown at zero. -->
+                <p class="quiz-notsure" data-notsure="one" data-i18n="quiz.breakdown.notsure.one" hidden></p>
+                <p class="quiz-notsure" data-notsure="many" data-i18n="quiz.breakdown.notsure.many" data-i18n-vars="count:0" hidden></p>
+
+                <div class="quiz-actions">
+                    <!-- href is set from booking.url in assets/quiz/quiz-config.json, with
+                         utm_content carrying the band id. -->
+                    <a class="btn btn-primary quiz-cta" data-band="retrofit" data-i18n="quiz.band.retrofit.cta" href="#" hidden></a>
+                    <a class="btn btn-primary quiz-cta" data-band="gaps" data-i18n="quiz.band.gaps.cta" href="#" hidden></a>
+                    <a class="btn btn-primary quiz-cta" data-band="ready" data-i18n="quiz.band.ready.cta" href="#" hidden></a>
+
+                    <!-- TODO: the PDF does not exist yet, in any language. Set gate.pdfUrl in
+                         assets/quiz/quiz-config.json. Hidden whenever the gate is off. -->
+                    <a class="btn btn-ghost" id="quiz-pdf" data-i18n="quiz.pdf.download" href="#" hidden></a>
+
+                    <button type="button" class="btn btn-ghost" id="quiz-retake" data-i18n="quiz.retake"></button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-4 align-items-start">
+                <div class="col-md-4">
+                    <div class="footer-brand d-flex align-items-center mb-2">
+                        <img src="assets/img/logo_name.png" alt="Bad Idea Interactive" height="45" class="me-2">
+                    </div>
+                    <p class="footer-text" data-i18n="footer.tagline">Indie studio turning "bad ideas" into focused arcade games, learning tools and playful experiments.</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h4 class="footer-heading" data-i18n="footer.explore">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="/" data-i18n="nav.home">Home</a></li>
+                        <li><a href="/lab" data-i18n="nav.lab">Lab</a></li>
+                        <li><a href="/consulting" data-i18n="nav.consulting">Consulting</a></li>
+                        <li><a href="/web" data-i18n="nav.web">Web</a></li>
+                        <li><a href="/notes" data-i18n="nav.notes">Notes</a></li>
+                        <li><a href="/contact" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h4 class="footer-heading" data-i18n="footer.contact">Contact</h4>
+                    <p class="footer-text" data-i18n="footer.contact.desc">For collaborations, consulting or speaking:</p>
+                    <p class="footer-text">
+                        <a href="mailto:hello@badideainteractive.com">hello@badideainteractive.com</a>
+                    </p>
+                    <div class="footer-socials">
+                        <a href="http://linkedin.com/company/bad-idea-interactive" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="https://www.instagram.com/badideaint/" aria-label="Instagram">Instagram</a>
+                        <a href="https://davidhthe1st.itch.io/" aria-label="Itch.io">Itch.io</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-legal" data-i18n-html="footer.legal">© <span id="year"></span> Bad Idea Interactive. All rights reserved. All trademarks and property of their respective owners. This website and the projects showcased are original works by Bad Idea Interactive and are not affiliated with any other companies, brands, or public institutions.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+                document.body.classList.add("scrolled");
+            } else {
+                document.body.classList.remove("scrolled");
+            }
+        });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script type="module" src="assets/js/quiz/main.js"></script>
+</body>
+</html>

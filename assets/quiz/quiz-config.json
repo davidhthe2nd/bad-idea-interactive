@@ -1,0 +1,48 @@
+{
+  "version": 1,
+
+  "answers": ["yes", "no", "notsure"],
+
+  "scoring": {
+    "yes": 1,
+    "no": 0,
+    "notsure": 0,
+    "recordNotSureSeparately": true
+  },
+
+  "clusters": [
+    { "id": "plan",     "questions": ["q1", "q2", "q3"] },
+    { "id": "build",    "questions": ["q4", "q5", "q6"] },
+    { "id": "content",  "questions": ["q7", "q8", "q9"] },
+    { "id": "pipeline", "questions": ["q10", "q11", "q12"] }
+  ],
+
+  "clusterStatus": {
+    "weak":    { "min": 0, "max": 1, "showWeakLine": true },
+    "partial": { "min": 2, "max": 2, "showWeakLine": false },
+    "solid":   { "min": 3, "max": 3, "showWeakLine": false }
+  },
+
+  "bands": [
+    { "id": "retrofit", "min": 0, "max": 4 },
+    { "id": "gaps",     "min": 5, "max": 8 },
+    { "id": "ready",    "min": 9, "max": 12 }
+  ],
+
+  "booking": {
+    "url": "https://calendly.com/david-badideainteractive/new-meeting",
+    "utmContentParam": "utm_content"
+  },
+
+  "gate": {
+    "enabled": false,
+    "webhookUrl": "TODO_N8N_WEBHOOK_URL",
+    "pdfUrl": "TODO_PDF_URL",
+    "privacyUrl": "TODO_PRIVACY_POLICY_URL"
+  },
+
+  "webhookPayload": {
+    "version": 1,
+    "fields": ["email", "consentResults", "consentNewsletter", "lang", "stage", "total", "band", "clusters", "answers", "notSureCount", "timestamp", "source"]
+  }
+}
